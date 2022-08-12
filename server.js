@@ -48,13 +48,18 @@ app.post('/api/users', (req, res) => {
     res.status(400).json({ message: 'User not created' });
   }
 });
-    // const { id } = req.params;
-    const id = Number(req.params.id);
-    // const id2 = 1;
+app.patch('/api/users/:id', (req, res) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+
+    const { name, password } = req.body;
     const user = userData.find((user) => user.id === id);
     if (!user) {
       res.status(404).send('User not found');
     } else {
+      console.log(user);
+      user.name = name;
+      user.password = password;
       console.log(user);
       res.json(user);
     }
