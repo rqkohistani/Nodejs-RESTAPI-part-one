@@ -29,6 +29,25 @@ app.get('/api/users/:id', (req, res) => {
     res.status(404).json({ message: 'User not found' });
   }
 });
+app.post('/api/users', (req, res) => {
+  try {
+    const { name, password } = req.body;
+    if (!name || !password) {
+      res.status(400).json({ message: 'Please provide name and password' });
+    } else {
+      const newUser = {
+        id: userData.length + 1,
+        name,
+        password,
+        hashedPassword: null,
+      };
+      userData.push(newUser);
+      res.json(newUser);
+    }
+  } catch (error) {
+    res.status(400).json({ message: 'User not created' });
+  }
+});
     // const { id } = req.params;
     const id = Number(req.params.id);
     // const id2 = 1;
