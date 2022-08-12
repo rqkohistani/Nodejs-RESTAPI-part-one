@@ -10,7 +10,8 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.sendFile(__dirname + '/index.html');
+});
 });
 // start the server
 app.listen(port, () => {
