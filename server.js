@@ -9,12 +9,16 @@ const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3000;
 
+const userData = require('./modules/user/user.data.js');
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
+
 app.get('/api/users', (req, res) => {
   res.json(userData);
 });
+
 app.get('/api/users/:id', (req, res) => {
   try {
     const id = Number(req.params.id);
@@ -29,6 +33,7 @@ app.get('/api/users/:id', (req, res) => {
     res.status(404).json({ message: 'User not found' });
   }
 });
+
 app.post('/api/users', (req, res) => {
   try {
     const { name, password } = req.body;
@@ -48,6 +53,7 @@ app.post('/api/users', (req, res) => {
     res.status(400).json({ message: 'User not created' });
   }
 });
+
 app.patch('/api/users/:id', (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
@@ -67,6 +73,7 @@ app.patch('/api/users/:id', (req, res) => {
     res.status(404).json({ message: 'User not found' });
   }
 });
+
 app.delete('/api/users/:id', (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
@@ -81,6 +88,7 @@ app.delete('/api/users/:id', (req, res) => {
     res.status(404).json({ message: 'User not found' });
   }
 });
+
 // start the server
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
