@@ -67,6 +67,19 @@ app.patch('/api/users/:id', (req, res) => {
     res.status(404).json({ message: 'User not found' });
   }
 });
+app.delete('/api/users/:id', (req, res) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const user = userData.find((user) => user.id === id);
+    if (!user) {
+      res.status(404).send('User not found');
+    } else {
+      userData.splice(userData.indexOf(user), 1);
+      res.json({ message: 'User deleted' });
+    }
+  } catch (err) {
+    res.status(404).json({ message: 'User not found' });
+  }
 });
 // start the server
 app.listen(port, () => {
