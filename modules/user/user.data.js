@@ -1,4 +1,4 @@
-exports.userData = [
+export const userDataJs = [
   {
     id: 1,
     name: 'John',
@@ -12,4 +12,3 @@ exports.userData = [
     hashedPassword: null,
   },
 ];
-module.exports = exports.userData;
