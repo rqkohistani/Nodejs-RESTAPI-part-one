@@ -22,11 +22,22 @@ const createUser = (user) => {
   return newUser;
 }
 
+const deleteUser = (id) => {
+  const user = defaultData.userData.find((user) => user.id === id);
+  if (!user) {
+    throw new Error('User not found user.service');
+  } else {
+    defaultData.userData = defaultData.userData.filter((user) => user.id !== id);
+    return user;
+  }
+}
+
 
 const userService = {
   getAllUsers,
   getUser,
   createUser,
+  deleteUser,
 };
 
 export default userService;
