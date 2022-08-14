@@ -21,50 +21,8 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-/**
- * Regular Js default data implementation and json file format implementation
- * if (!jsDefaultData) then execute the user.data.js file and import the userData array
- * else execute the user.default.data.json file.
- */
-const jsDefaultData = true;
-if (jsDefaultData) {
-  app.get('/api/users', (req, res) => {
-    res.json(userDataJs);
-  });
-  app.get('/api/users/:id', (req, res) => {
-    try {
-      const id = parseInt(req.params.id, 10);
-      const user = userDataJs.find((user) => user.id === id);
-      if (!user) {
-        throw new Error('User not found');
-      } else {
-        console.log(user);
-        res.json(user);
-      }
-    } catch (err) {
-      res.status(404).json({ message: 'User not found' });
-    }
-  });
-
-  app.post('/api/users', (req, res) => {
-    try {
-      const { name, password } = req.body;
-      if (!name || !password) {
-        throw new Error('Please provide name and password');
-      } else {
-        const newUser = {
-          id: userDataJs.length + 1,
-          name,
-          password,
-          hashedPassword: null,
-        };
-        userDataJs.push(newUser);
-        res.json(newUser);
-      }
-    } catch (error) {
-      res.status(400).json({ message: 'User not created' });
-    }
-  });
+app.use('/api/v1', routes());
+app.use('*', notFoundRoute);
 
   app.patch('/api/users/:id', (req, res) => {
     try {
