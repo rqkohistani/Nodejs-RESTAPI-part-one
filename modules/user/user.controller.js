@@ -9,3 +9,15 @@ const getAllUsers = (req, res, next) => {
     // TODO: next(error);
   }
 };
+
+const getUser = (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const user = userService.getUser(id);
+    if (!user) throw new Error('User not found controller');
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).send(error);
+    // TODO: next(error);
+  }
+};
