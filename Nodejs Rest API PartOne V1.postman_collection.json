@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "3bf5ae8a-8ef6-4b1b-bd1e-151bb6d292fe",
-		"name": "jwt-API V1",
+		"name": "Nodejs Rest API PartOne V1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18638279"
 	},
@@ -15,12 +15,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseUrl}}/api/users",
+							"raw": "{{BaseUrl}}/users",
 							"host": [
 								"{{BaseUrl}}"
 							],
 							"path": [
-								"api",
 								"users"
 							]
 						}
@@ -33,19 +32,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseUrl}}/api/users/:id",
+							"raw": "{{BaseUrl}}/users/:id",
 							"host": [
 								"{{BaseUrl}}"
 							],
 							"path": [
-								"api",
 								"users",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -57,13 +55,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Robin\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{BaseUrl}}/api/users",
+							"raw": "{{BaseUrl}}/users",
 							"host": [
 								"{{BaseUrl}}"
 							],
 							"path": [
-								"api",
 								"users"
 							]
 						}
@@ -85,19 +91,18 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseUrl}}/api/users/:id",
+							"raw": "{{BaseUrl}}/users/:id",
 							"host": [
 								"{{BaseUrl}}"
 							],
 							"path": [
-								"api",
 								"users",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -119,19 +124,18 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseUrl}}/api/users/:id",
+							"raw": "{{BaseUrl}}/users/:id",
 							"host": [
 								"{{BaseUrl}}"
 							],
 							"path": [
-								"api",
 								"users",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -164,7 +168,7 @@
 	"variable": [
 		{
 			"key": "BaseUrl",
-			"value": "http://localhost:3000",
+			"value": "http://localhost:3000/api/v1",
 			"type": "string"
 		}
 	]
