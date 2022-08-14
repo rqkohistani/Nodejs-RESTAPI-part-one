@@ -1,11 +1,13 @@
 {
-  "name": "jwt",
+  "name": "Build a nodejs-API-part-one",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node server.js",
+    "devStart": "nodemon --experimental-modules --es-module-specifier-resolution=node server2.js"
   },
   "repository": {
     "type": "git",
