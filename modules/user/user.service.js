@@ -13,10 +13,43 @@ const getUser = (id) => {
   }
 }
 
+const createUser = (user) => {
+  const newUser = {
+    id: defaultData.userData.length + 1,
+    ...user,
+  };
+  defaultData.userData.push(newUser);
+  return newUser;
+}
+
+const deleteUser = (id) => {
+  const user = defaultData.userData.find((user) => user.id === id);
+  if (!user) {
+    throw new Error('User not found user.service');
+  } else {
+    defaultData.userData = defaultData.userData.filter((user) => user.id !== id);
+    return user;
+  }
+}
+
+const updateUser = (id, user) => {
+  const userToUpdate = defaultData.userData.find((user) => user.id === id);
+  if (!userToUpdate) {
+    throw new Error('User not found user.service');
+  } else {
+    userToUpdate.name = user.name;
+    userToUpdate.email = user.email;
+    return userToUpdate;
+  }
+}
+
 
 const userService = {
   getAllUsers,
   getUser,
+  createUser,
+  deleteUser,
+  updateUser,
 };
 
 export default userService;
