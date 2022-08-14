@@ -1,0 +1,28 @@
+{
+  "userData": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "email@noreply.com",
+      "non-hashed-password": "password",
+      "password": null,
+      "userRole": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Sally",
+      "email": "email@noreply.com",
+      "non-hashed-password": "password",
+      "password": null,
+      "userRol": "user"
+    },
+    {
+      "id": 3,
+      "name": "Joe",
+      "email": "email@noreply.com",
+      "non-hashed-password": "password",
+      "password": null,
+      "userRol": "user"
+    }
+  ]
+}
