@@ -26,19 +26,35 @@ const getUser = (req, res, next) => {
 
 const createUser = (req, res, next) => {
   try {
+    // TODO: validate req.body
     const user = userService.createUser(req.body);
     if (!user) throw new Error('User not created controller');
     res.status(201).send(user);
   } catch (error) {
     res.status(500).send(error);
+    // TODO: next(error); extend error object with status code
   }
 };
+
+const deleteUser = (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const user = userService.deleteUser(id);
+    if (!user) throw new Error('User not found controller');
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).send(error);
+    // TODO: next(error); extend error object with status code
+  }
+};
+
 const userController = {
   getAllUsers,
   getUser,
   createUser,
+  deleteUser,
 };
 
 export default userController;
 
-export { getAllUsers, getUser, createUser };
+export { getAllUsers, getUser, createUser, deleteUser };
