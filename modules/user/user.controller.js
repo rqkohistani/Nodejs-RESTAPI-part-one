@@ -24,11 +24,21 @@ const getUser = (req, res, next) => {
   }
 };
 
+const createUser = (req, res, next) => {
+  try {
+    const user = userService.createUser(req.body);
+    if (!user) throw new Error('User not created controller');
+    res.status(201).send(user);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
 const userController = {
   getAllUsers,
   getUser,
+  createUser,
 };
 
 export default userController;
 
-export { getAllUsers, getUser };
+export { getAllUsers, getUser, createUser };
