@@ -13,10 +13,20 @@ const getUser = (id) => {
   }
 }
 
+const createUser = (user) => {
+  const newUser = {
+    id: defaultData.userData.length + 1,
+    ...user,
+  };
+  defaultData.userData.push(newUser);
+  return newUser;
+}
+
 
 const userService = {
   getAllUsers,
   getUser,
+  createUser,
 };
 
 export default userService;
