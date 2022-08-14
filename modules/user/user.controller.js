@@ -48,13 +48,25 @@ const deleteUser = (req, res, next) => {
   }
 };
 
+const updateUser = (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const user = userService.updateUser(id, req.body);
+    if (!user) throw new Error('User not found controller');
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
 const userController = {
   getAllUsers,
   getUser,
   createUser,
   deleteUser,
+  updateUser,
 };
 
 export default userController;
 
-export { getAllUsers, getUser, createUser, deleteUser };
+export { getAllUsers, getUser, createUser, deleteUser, updateUser };
