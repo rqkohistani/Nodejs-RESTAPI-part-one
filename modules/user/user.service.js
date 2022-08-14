@@ -32,12 +32,24 @@ const deleteUser = (id) => {
   }
 }
 
+const updateUser = (id, user) => {
+  const userToUpdate = defaultData.userData.find((user) => user.id === id);
+  if (!userToUpdate) {
+    throw new Error('User not found user.service');
+  } else {
+    userToUpdate.name = user.name;
+    userToUpdate.email = user.email;
+    return userToUpdate;
+  }
+}
+
 
 const userService = {
   getAllUsers,
   getUser,
   createUser,
   deleteUser,
+  updateUser,
 };
 
 export default userService;
