@@ -1,3 +1,5 @@
+import userService from './user.service';
+
 const getAllUsers = (req, res, next) => {
   try {
     const users = userService.getAllUsers();
@@ -21,3 +23,12 @@ const getUser = (req, res, next) => {
     // TODO: next(error);
   }
 };
+
+const userController = {
+  getAllUsers,
+  getUser,
+};
+
+export default userController;
+
+export { getAllUsers, getUser };
