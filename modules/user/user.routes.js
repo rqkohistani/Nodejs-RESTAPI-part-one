@@ -9,7 +9,7 @@ const routes = () => {
   userRouter.get('/:id', getUser);
   userRouter.post('/', userValidators.createUser,createUser);
   userRouter.delete('/:id', deleteUser);
-  userRouter.patch('/:id', updateUser);
+  userRouter.patch('/:id', userValidators.updateUser,updateUser);
 
   return userRouter;
 };
