@@ -57,7 +57,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Robin\",\r\n    \"password\": \"password\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Robin\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"user\",\r\n    \"email\":\"robin@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -83,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Rashed\",\r\n    \"password\": \"password\"\r\n}",
+							"raw": "{\r\n       \"id\": 5,\r\n        \"name\": \"JonasNew\",\r\n        \"password\": \"passwordNew\",\r\n        \"userRole\": \"user\",\r\n        \"email\": \"jonas@gmail.comNew\",\r\n        \"createdAt\": \"2021-08-15T15:42:00.000Z\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,7 +102,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "5"
 								}
 							]
 						}
@@ -135,7 +135,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "3"
 								}
 							]
 						}
