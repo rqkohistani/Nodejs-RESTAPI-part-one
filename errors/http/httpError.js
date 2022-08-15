@@ -9,7 +9,7 @@
  * @example
  * throw new HttpError(statusCode, message);
  * 
- * It is ensured that the error is an instance of the HttpError class.
+ * It ensures that the error is an instance of the HttpError class.
  * Makes Stack trace  alittle easier to read.
  * @see {@link https://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript}
  */
