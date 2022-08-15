@@ -51,7 +51,6 @@ ajv.addKeyword({
 //   "required": ["name", "email", "password", "userRole"]
 // }
 
-
 const createUser = (req, res, next) => {
   const valid = validateJsonSchema(createUserSchema, req.body);
 
@@ -62,7 +61,13 @@ const validateJsonSchema = (schema, data) => {
   const validate = ajv.compile(schema);
   console.log('valid: ', validate);
 
-  if (!validate(data)) throw new HttpError(404, 'Invalid user data');
+  if (!validate(data))
+    throw new HttpError(
+      404,
+      `${validate.errors[0].message}. Required fields ${createUserSchema.required.join(
+        ', '
+      )} and additionalProperties: createAt, updatedAt`
+    );
 };
 
 const userValidators = {
