@@ -1,18 +1,15 @@
+import fs from 'fs';
 import defaultData from './user.default.data';
 
 const getAllUsers = () => {
   return defaultData.userData;
 };
 
+// TODO: validate req.body
 const getUser = (id) => {
   const user = defaultData.userData.find((user) => user.id === id);
-  if (!user) {
-    throw new Error('User not found user.service');
-  } else {
-    return user;
-  }
-}
-
+  return user;
+};
 const createUser = (user) => {
   const newUser = {
     // TODO: validate user.
