@@ -1,5 +1,7 @@
 import express from 'express';
 import path from 'path';
+import errorHandler from './errorHandler';
+
 import routes, { notFoundRoute } from './routes';
 
 const app = express();
@@ -16,8 +18,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1', routes());
 app.use('*', notFoundRoute);
-
-
+app.use(errorHandler);
 
 // start the server
 app.listen(port, () => {

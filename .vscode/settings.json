@@ -1,0 +1,5 @@
+{
+  "liveServer.settings.ignoreFiles": [".vscode/**", "**/*.scss", "**/*.sass", "**/*.ts"],
+  "workbench.settings.openDefaultKeybindings": false,
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}", ".env", ".git{,/**}"]
+}
