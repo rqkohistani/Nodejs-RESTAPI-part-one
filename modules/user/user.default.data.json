@@ -38,12 +38,12 @@
     },
     {
       "id": 5,
-      "name": "Jonas",
-      "password": "password",
+      "name": "JonasNew",
+      "password": "passwordNew",
       "userRole": "user",
-      "email": "jonas@gmail.com",
+      "email": "jonas@gmail.comNew",
       "createdAt": "2022-08-15T15:42:00.000Z",
-      "updatedAt": "2022-08-15T00:42:00.000Z"
+      "updatedAt": "2022-08-15T17:17:09.231Z"
     },
     {
       "id": 6,
@@ -53,6 +53,15 @@
       "email": "rashed@gmail.com",
       "createdAt": "2022-08-15T15:42:00.000Z",
       "updatedAt": "2022-08-15T00:42:00.000Z"
+    },
+    {
+      "id": 7,
+      "name": "Robin",
+      "password": "password",
+      "userRole": "user",
+      "email": "robin@gmail.com",
+      "createdAt": "2022-08-15T17:15:42.067Z",
+      "updatedAt": "2022-08-15T17:15:42.067Z"
     }
   ]
 }

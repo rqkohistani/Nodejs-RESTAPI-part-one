@@ -9,8 +9,20 @@
     "email": { "type": "string", "format": "email" },
     "password": { "type": "string", "minLength": 8 },
     "userRole": { "enum": ["admin", "user"] },
-    "createdAt": { "type": "string", "format": "date-time", "examples": ["2022-01-01T00:00:00.000Z"] },
-    "updatedAt": { "type": "string", "format": "date-time", "examples": ["2022-01-01T00:00:00.000Z"] }
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "formatMinimum": "2022-01-01T00:00:00.000Z",
+      "formatExclusiveMaximum": "2026-12-25T00:00:00.000Z",
+      "examples": ["2022-01-01T00:00:00.000Z"]
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "examples": ["2022-01-01T00:00:00.000Z"],
+      "formatMinimum": "2022-01-01T00:00:00.000Z",
+      "formatExclusiveMaximum": "2026-12-25T00:00:00.000Z"
+    }
   },
   "additionalProperties": false,
   "required": ["name", "email", "password", "userRole"]

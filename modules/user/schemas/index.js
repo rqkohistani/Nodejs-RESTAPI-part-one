@@ -13,4 +13,5 @@
  * npm i ajv-formats
  */
 import createUserSchema from './createUser.schema.json';
-export { createUserSchema };
+import updateUserSchema from './updateUser.schema.json';
+export { createUserSchema, updateUserSchema };

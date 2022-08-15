@@ -17,7 +17,7 @@
  *
  */
 
-import { createUserSchema } from './schemas';
+import { createUserSchema, updateUserSchema } from './schemas';
 import { HttpError } from '../../errors';
 import addFormats from 'ajv-formats';
 
@@ -57,6 +57,7 @@ const createUser = (req, res, next) => {
   next();
 };
 
+// TODO: Make validationJsonSchema a generic function
 const validateJsonSchema = (schema, data) => {
   const validate = ajv.compile(schema);
   console.log('valid: ', validate);
@@ -70,8 +71,35 @@ const validateJsonSchema = (schema, data) => {
     );
 };
 
+const updateUser = (req, res, next) => {
+  const valid = validateJsonSchema(updateUserSchema, req.body);  
+  next();
+};
+
+// TODO: add the validation to the user validation middleware
+
+// const updateUserSchema = {
+//   type: 'object',
+//   properties: {
+//     name: { type: 'string', minLength: 1 },
+//     email: { type: 'string', format: 'email' },
+//     password: { type: 'string', minLength: 8 },
+//     // userRole: { enum: ['admin', 'user'] },
+//     /** TODO: OBS: NOT ALLOWED TO UPDATE THE USER ROLE find a validation for this
+//      * TODO:Only admin should update the user role or update other an athlete's inormation.
+//      */
+//     // updatedAt: { type: 'string', format: 'date-time', "formatMinimum":createUserSchema.properties.createdAt.formatMinimum },
+//     updatedAt: { type: 'string', format: 'date-time', formatMinimum: '2020-01-15T15:42:00.000Z' },
+//   },
+//   additionalProperties: false,
+//   required: ['name', 'password'],
+//   // anyOf: [{ required: ['email'] }, { required: ['password'] }, { required: ['userRole'] }, { required: ['createdAt'] }],
+//   // oneOf: [{ required: ['name'] }, { required: ['email'] }, { required: ['password'] }, { required: ['createdAt'] }],
+// };
+
 const userValidators = {
   createUser,
+  updateUser,
 };
 
 export default userValidators;
