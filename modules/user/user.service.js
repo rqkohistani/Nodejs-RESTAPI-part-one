@@ -40,17 +40,26 @@ const deleteUser = (id) => {
   return user;
 };
 
-const updateUser = (id, user) => {
-  const userToUpdate = defaultData.userData.find((user) => user.id === id);
-  if (!userToUpdate) {
-    throw new Error('User not found user.service');
-  } else {
-    userToUpdate.name = user.name;
-    userToUpdate.email = user.email;
-    return userToUpdate;
+// TODO: validate req.body
+const updateUser = (id, updateUser) => {
+  const oldUser = defaultData.userData.find((user) => user.id === id);
+  if (oldUser) {
+    const data = fs.readFileSync('./modules/user/user.default.data.json');
+    const users = JSON.parse(data);
+    const newUserData = users.userData.map((user) => {
+      if (user.id === id) {
+        return {
+          id: user.id,
+          ...user,
+          ...updateUser,
+        };
+      }
+      return user;
+    });
+    fs.writeFileSync('./modules/user/user.default.data.json', JSON.stringify({ userData: newUserData }));
   }
-}
-
+  return oldUser;
+};
 
 const userService = {
   getAllUsers,
