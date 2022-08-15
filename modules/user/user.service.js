@@ -12,11 +12,12 @@ const getUser = (id) => {
 };
 const createUser = (user) => {
   const newUser = {
-    // TODO: validate user.
-    // This Id is not unique. Since we are using a default data file length. This is not a problem. This is just a reminder.
-    // This will be handled in when we implement the validation. Or database. FOR NOW, let's just use the length of the array.
+    // This Id is not unique. Since default data file length is used. This is not a problem. This is just a reminder.
+    // This will be handled in when validation is implemented Or database. FOR NOW, let's just use the length of the json userData array.
     id: defaultData.userData.length + 1,
     ...user,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   };
   const data = fs.readFileSync('./modules/user/user.default.data.json');
   const users = JSON.parse(data);
@@ -41,6 +42,7 @@ const deleteUser = (id) => {
 const updateUser = (id, updateUser) => {
   const oldUser = defaultData.userData.find((user) => user.id === id);
   if (oldUser) {
+
     const data = fs.readFileSync('./modules/user/user.default.data.json');
     const users = JSON.parse(data);
     const newUserData = users.userData.map((user) => {
@@ -48,6 +50,7 @@ const updateUser = (id, updateUser) => {
         return {
           id: user.id,
           ...user,
+          updatedAt: new Date().toISOString(),
           ...updateUser,
         };
       }
