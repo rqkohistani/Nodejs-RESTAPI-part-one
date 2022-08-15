@@ -64,3 +64,9 @@ const validateJsonSchema = (schema, data) => {
 
   if (!validate(data)) throw new HttpError(404, 'Invalid user data');
 };
+
+const userValidators = {
+  createUser,
+};
+
+export default userValidators;
