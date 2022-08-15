@@ -30,13 +30,15 @@ const createUser = (user) => {
 
 const deleteUser = (id) => {
   const user = defaultData.userData.find((user) => user.id === id);
-  if (!user) {
-    throw new Error('User not found user.service');
-  } else {
-    defaultData.userData = defaultData.userData.filter((user) => user.id !== id);
-    return user;
+  // TODO: keep this validation in the service layer until the validation is implemented.
+  if (user) {
+    const data = fs.readFileSync('./modules/user/user.default.data.json');
+    const users = JSON.parse(data);
+    const newUserData = users.userData.filter((user) => user.id !== id);
+    fs.writeFileSync('./modules/user/user.default.data.json', JSON.stringify({ userData: newUserData }));
   }
-}
+  return user;
+};
 
 const updateUser = (id, user) => {
   const userToUpdate = defaultData.userData.find((user) => user.id === id);
