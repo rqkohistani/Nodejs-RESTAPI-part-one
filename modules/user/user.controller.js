@@ -26,13 +26,11 @@ const getUser = (req, res, next) => {
 
 const createUser = (req, res, next) => {
   try {
-    // TODO: validate req.body
     const user = userService.createUser(req.body);
     if (!user) throw new HttpError(404, 'User not created controller');
     res.status(201).send(user);
   } catch (error) {
-    res.status(500).send(error);
-    // TODO: next(error); extend error object with status code
+    next(error);
   }
 };
 // TODO
