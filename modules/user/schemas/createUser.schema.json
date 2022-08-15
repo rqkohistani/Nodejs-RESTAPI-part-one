@@ -9,8 +9,8 @@
     "email": { "type": "string", "format": "email" },
     "password": { "type": "string", "minLength": 8 },
     "userRole": { "enum": ["admin", "user"] },
-    "createdAt": { "type": "string", "format": "date-time" },
-    "updatedAt": { "type": "string", "format": "date-time" }
+    "createdAt": { "type": "string", "format": "date-time", "examples": ["2022-01-01T00:00:00.000Z"] },
+    "updatedAt": { "type": "string", "format": "date-time", "examples": ["2022-01-01T00:00:00.000Z"] }
   },
   "additionalProperties": false,
   "required": ["name", "email", "password", "userRole"]
