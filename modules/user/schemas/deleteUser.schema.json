@@ -6,5 +6,5 @@
     "secret": { "type": "string", "minLength": 5 }
   },
   "additionalProperties": false,
-  "required": ["id", "name", "secret"]
+  "required": ["id", "secret"]
 }
