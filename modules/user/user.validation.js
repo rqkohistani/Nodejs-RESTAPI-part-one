@@ -57,17 +57,19 @@ const updateUser = (req, res, next) => {
   next();
 };
 
-
 const deleteUser = (req, res, next) => {
+  const id = parseInt(req.params.id, 10);
   const secret = req.body.secret;
   if (secretProvided(secret)) {
-    const valid = validateJsonSchemaNew(deleteUserSchema, req.body);
+    const user = {
+      ...req.body,
+      id,
+    };
+    validateJsonSchema(deleteUserSchema, user);
+    req.body = user;
     next();
   } else {
-    throw new HttpError(
-      401,
-      ` Unauthorized: Required fields ${deleteUserSchema.required.join(', ')} `
-    );
+    throw new HttpError(401, ` Unauthorized: Secret is not provided`);
   }
 };
 
