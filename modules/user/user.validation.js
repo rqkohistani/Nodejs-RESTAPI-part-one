@@ -1,36 +1,7 @@
-/**
- * ajvOptions: {
- * allErrors: true, // return all errors, not just the first one
- * removeAdditional: true, // remove additional properties from the validated data
- * multipleOfPrecision: 12 // the precision used when converting floating point numbers to string
- * }
- *
- * addFormat: {
- * 'date-time': dateTimeFormat,
- * 'date': dateFormat,
- * 'time': timeFormat,
- *
- *
- * ajv.addKeyword function to add a custom keyword to the ajv instance.
- * The keyword is added to the ajv instance when ajv-formats is used without options or with option keywords: true.
- * These keywords apply only to strings. If the data is not a string, the validation succeeds. npm i ajv-formats
- *
- */
 
-import { createUserSchema, updateUserSchema,deleteUserSchema } from './schemas';
+import { validateJsonSchema } from '../../utils/validation.util';
+import { createUserSchema, updateUserSchema, deleteUserSchema } from './schemas';
 import { HttpError } from '../../errors';
-import addFormats from 'ajv-formats';
-
-const ajvOptions = { allErrors: true, removeAdditional: true, multipleOfPrecision: 12 };
-const ajv = new Ajv(ajvOptions);
-
-import Ajv from 'ajv';
-addFormats(ajv);
-
-ajv.addKeyword({
-  keyword: 'example',
-  errors: false,
-});
 
 const createUser = (req, res, next) => {
   const user = {
@@ -73,13 +44,6 @@ const deleteUser = (req, res, next) => {
   } else {
     throw new HttpError(401, ` Unauthorized: Secret is not provided`);
   }
-};
-
-// TODO: Make validationJsonSchema a generic function
-const validateJsonSchemaNew = (schema, data) => {
-  const validate = ajv.compile(schema);
-  if (!validate(data))
-    throw new HttpError(404, `${validate.errors[0].message}. Required fields ${deleteUserSchema.required.join(', ')} `);
 };
 
 /**
