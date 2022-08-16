@@ -76,6 +76,12 @@ const updateUser = (req, res, next) => {
   next();
 };
 
+// TODO: Make validationJsonSchema a generic function
+const validateJsonSchemaNew = (schema, data) => {
+  const validate = ajv.compile(schema);
+  if (!validate(data))
+    throw new HttpError(404, `${validate.errors[0].message}. Required fields ${deleteUserSchema.required.join(', ')} `);
+};
 /**
  * TODO: Add secret to the environment variables or validate that only admin can delete a user
  * or delete a user only if the user is inactive for a certain period of time
