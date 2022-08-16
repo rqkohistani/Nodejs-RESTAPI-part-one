@@ -13,11 +13,10 @@ const getAllUsers = (req, res, next) => {
 };
 
 const getUser = (req, res, next) => {
-  // TODO: validate req.body
   try {
     const id = parseInt(req.params.id, 10);
     const user = userService.getUser(id);
-    if (!user?.length) throw new HttpError(404, 'User not found.');
+    if (!user) throw new HttpError(404, 'User not found.');
     res.status(200).send(user);
   } catch (error) {
     next(error);
@@ -33,25 +32,22 @@ const createUser = (req, res, next) => {
     next(error);
   }
 };
-// TODO
-// TODO: validate req.body
 const deleteUser = (req, res, next) => {
   try {
     const id = parseInt(req.params.id, 10);
     const user = userService.deleteUser(id);
-    if (!user?.length) throw new HttpError(404, 'User not found.');
+    if (!user) throw new HttpError(404, 'User not found.');
     res.status(200).send(user);
   } catch (error) {
     next(error);
   }
 };
 
-// TODO: validate req.body
 const updateUser = (req, res, next) => {
   try {
     const id = parseInt(req.params.id, 10);
     const user = userService.updateUser(id, req.body);
-    if (!user?.length) throw new HttpError(404, 'User not found.');
+    if (!user) throw new HttpError(404, 'User not found.');
     res.status(200).send(user);
   } catch (error) {
         next(error);
