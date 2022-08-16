@@ -1,4 +1,5 @@
 import fs from 'fs';
+import bcrypt from 'bcrypt';
 import defaultData from './user.default.data';
 
 const getAllUsers = () => {
@@ -16,6 +17,8 @@ const createUser = (user) => {
     // This will be handled in when validation is implemented Or database. FOR NOW, let's just use the length of the json userData array.
     id: defaultData.userData.length + 1,
     ...user,
+    password: bcrypt.hashSync(user.password, 10),
+    non_encrypted_password: user.password,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
