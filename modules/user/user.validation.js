@@ -17,7 +17,7 @@
  *
  */
 
-import { createUserSchema, updateUserSchema } from './schemas';
+import { createUserSchema, updateUserSchema,deleteUserSchema } from './schemas';
 import { HttpError } from '../../errors';
 import addFormats from 'ajv-formats';
 
@@ -31,25 +31,6 @@ ajv.addKeyword({
   keyword: 'example',
   errors: false,
 });
-
-// TODO: add the validation to the user validation middleware
-// const createUserSchema = {
-//   "type": "object",
-//   "properties": {
-//     "id": {
-//       "type": "integer",
-//       "description": "The id of the user"
-//     },
-//     "name": { "type": "string", "minLength": 1 },
-//     "email": { "type": "string", "format": "email" },
-//     "password": { "type": "string", "minLength": 8 },
-//     "userRole": { "enum": ["admin", "user"] },
-//     "createdAt": { "type": "string", "format": "date-time" },
-//     "updatedAt": { "type": "string", "format": "date-time" }
-//   },
-//   "additionalProperties": false,
-//   "required": ["name", "email", "password", "userRole"]
-// }
 
 const createUser = (req, res, next) => {
   const valid = validateJsonSchema(createUserSchema, req.body);
@@ -72,8 +53,22 @@ const validateJsonSchema = (schema, data) => {
 };
 
 const updateUser = (req, res, next) => {
-  const valid = validateJsonSchema(updateUserSchema, req.body);  
+  const valid = validateJsonSchema(updateUserSchema, req.body);
   next();
+};
+
+
+const deleteUser = (req, res, next) => {
+  const secret = req.body.secret;
+  if (secretProvided(secret)) {
+    const valid = validateJsonSchemaNew(deleteUserSchema, req.body);
+    next();
+  } else {
+    throw new HttpError(
+      401,
+      ` Unauthorized: Required fields ${deleteUserSchema.required.join(', ')} `
+    );
+  }
 };
 
 // TODO: Make validationJsonSchema a generic function
@@ -82,6 +77,7 @@ const validateJsonSchemaNew = (schema, data) => {
   if (!validate(data))
     throw new HttpError(404, `${validate.errors[0].message}. Required fields ${deleteUserSchema.required.join(', ')} `);
 };
+
 /**
  * TODO: Add secret to the environment variables or validate that only admin can delete a user
  * or delete a user only if the user is inactive for a certain period of time
@@ -96,9 +92,12 @@ const secretProvided = (secret) => {
   }
 };
 
+export { createUser, updateUser, deleteUser };
+
 const userValidators = {
   createUser,
   updateUser,
+  deleteUser,
 };
 
 export default userValidators;
