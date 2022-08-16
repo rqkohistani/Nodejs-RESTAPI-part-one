@@ -38,22 +38,20 @@ const createUser = (req, res, next) => {
   next();
 };
 
-// TODO: Make validationJsonSchema a generic function
-const validateJsonSchema = (schema, data) => {
-  const validate = ajv.compile(schema);
-  console.log('valid: ', validate);
-
-  if (!validate(data))
-    throw new HttpError(
-      404,
-      `${validate.errors[0].message}. Required fields ${createUserSchema.required.join(
-        ', '
-      )} and additionalProperties: createAt, updatedAt`
-    );
-};
-
 const updateUser = (req, res, next) => {
-  const valid = validateJsonSchema(updateUserSchema, req.body);
+  const id = parseInt(req.params.id, 10);
+  const user = {
+    ...req.body,
+    id,
+  };
+  validateJsonSchema(updateUserSchema, user);
+  delete user.id;
+  /**
+   * id is not allowed to be updated and is therefore removed from the score object.
+   * It is only used for validation. The id is taken from the url. This is done to prevent the id from being updated.
+   * or updateUserSchema.properties remove it    "id": { "type": "integer" }, However, this is not recommended.
+   */
+  req.body = user;
   next();
 };
 
