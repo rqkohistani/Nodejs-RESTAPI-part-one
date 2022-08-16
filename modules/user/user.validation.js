@@ -33,8 +33,12 @@ ajv.addKeyword({
 });
 
 const createUser = (req, res, next) => {
-  const valid = validateJsonSchema(createUserSchema, req.body);
-
+  const user = {
+    ...req.body,
+  };
+  validateJsonSchema(createUserSchema, user);
+  req.body = user; // req.body is the data sent to the server in the request body. req.body is a property on the request object.
+  // req.body.user = user; // req.body.user is a property on the request object.
   next();
 };
 
