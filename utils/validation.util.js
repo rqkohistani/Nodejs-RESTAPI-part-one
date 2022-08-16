@@ -32,8 +32,12 @@ ajv.addKeyword({
 export const validateJsonSchema = (schema, data) => {
   const validate = ajv.compile(schema);
   validate(data); // returns true or false depending on the data passed in and the schema
-
+  
+  
+  
   if (validate.errors) {
-    throw new ValidatorError(400, validate.errors);
+    const { message } = validate.errors[0];
+    const params = validate.errors[0].params.missingProperty;
+    throw new ValidatorError(400, `${message} ${params} ${schema.required}`);
   }
 };

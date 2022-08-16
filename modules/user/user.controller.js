@@ -13,7 +13,6 @@ const getAllUsers = (req, res, next) => {
 };
 
 const getUser = (req, res, next) => {
-  // TODO: validate req.body
   try {
     const id = parseInt(req.params.id, 10);
     const user = userService.getUser(id);
@@ -33,8 +32,6 @@ const createUser = (req, res, next) => {
     next(error);
   }
 };
-// TODO
-// TODO: validate req.body
 const deleteUser = (req, res, next) => {
   try {
     const id = parseInt(req.params.id, 10);
@@ -46,7 +43,6 @@ const deleteUser = (req, res, next) => {
   }
 };
 
-// TODO: validate req.body
 const updateUser = (req, res, next) => {
   try {
     const id = parseInt(req.params.id, 10);
@@ -54,7 +50,8 @@ const updateUser = (req, res, next) => {
     if (!user) throw new HttpError(404, 'User not found.');
     res.status(200).send(user);
   } catch (error) {
-    res.status(500).send(error);
+        next(error);
+
   }
 };
 
