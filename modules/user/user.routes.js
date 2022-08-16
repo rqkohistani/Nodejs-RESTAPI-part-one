@@ -8,7 +8,7 @@ const routes = () => {
   userRouter.get('/', getAllUsers);
   userRouter.get('/:id', getUser);
   userRouter.post('/', userValidators.createUser,createUser);
-  userRouter.delete('/:id', deleteUser);
+  userRouter.delete('/:id', userValidators.deleteUser, deleteUser);
   userRouter.patch('/:id', userValidators.updateUser,updateUser);
 
   return userRouter;

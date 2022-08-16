@@ -14,4 +14,5 @@
  */
 import createUserSchema from './createUser.schema.json';
 import updateUserSchema from './updateUser.schema.json';
-export { createUserSchema, updateUserSchema };
+import deleteUserSchema from './deleteUser.schema.json';
+export { createUserSchema, updateUserSchema, deleteUserSchema };
