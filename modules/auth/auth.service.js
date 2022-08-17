@@ -36,10 +36,23 @@ const logout = async (email) => {
   };
 };
 
+const getUserFromAuthToken = async (authToken, email) => {
+  try {
+    const token = authToken?.split('Bearer').pop();
+    if (!token) throw new HttpError(401, 'Unauthorized: No token provided');
+    // const user = await userService.getUserByToken(token);
+    const user = getUserByEmail(email);
+    if (!user) throw new HttpError(401, 'Unauthorized: Invalid token');
+    return user;
+  } catch (error) {
+    throw new HttpError(401, 'Unauthorized: Invalid token');
+  }
+};
 
 const authService = {
   login,
   logout,
+  getUserFromAuthToken,
 };
 
 export default authService;
