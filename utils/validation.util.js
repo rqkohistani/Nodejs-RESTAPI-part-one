@@ -38,6 +38,7 @@ export const validateJsonSchema = (schema, data) => {
   if (validate.errors) {
     const { message } = validate.errors[0];
     const params = validate.errors[0].params.missingProperty;
-    throw new ValidatorError(400, `${message} ${params} ${schema.required}`);
+    // throw new ValidatorError(400, `${message} ${params} ${schema.required}`);
+    throw new ValidatorError(400, `${message} Required fileds:  ${schema.required}`);
   }
 };
