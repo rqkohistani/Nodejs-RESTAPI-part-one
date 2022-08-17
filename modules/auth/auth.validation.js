@@ -2,20 +2,21 @@ import { loginSchema,logoutSchema } from './schemas';
 import { validateJsonSchema } from '../../utils/validation.util';
 
 const login = (req, res, next) => {
-  const user = {
-    ...req.body,
+  const credentials = {
+    email: req.body.email,
+    password: req.body.password,
   };
-  validateJsonSchema(loginSchema, user);
-  req.body = user;
+  validateJsonSchema(loginSchema, credentials);
+  req.body = credentials;
   next();
 };
 
 const logout = (req, res, next) => {
-  const user = {
-    ...req.body,
+  const credentials = {
+    email: req.body.email,
   };
-  validateJsonSchema(logoutSchema, user);
-  req.body = user;
+  validateJsonSchema(logoutSchema, credentials);
+  req.body = credentials;
   next();
 };
 
