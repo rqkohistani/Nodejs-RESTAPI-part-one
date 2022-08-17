@@ -1,0 +1,19 @@
+{
+  "user": {
+    "routes": ["GET/api/v1/users", "GET/api/v1/users/{id}"]
+  },
+  "admin": {
+    "routes": [
+      "GET/api/v1/users",
+      "GET/api/v1/users/{id}",
+      "POST/api/v1/users",
+      "PUT/api/v1/users/{id}",
+      "DELETE/api/v1/users/{id}",
+      "GET/api/v1/admins",
+      "GET/api/v1/admins/{id}",
+      "POST/api/v1/admins",
+      "PUT/api/v1/admins/{id}",
+      "DELETE/api/v1/admins/{id}"
+    ]
+  }
+}
