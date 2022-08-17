@@ -1,6 +1,7 @@
 import fs from 'fs';
 import bcrypt from 'bcrypt';
-import defaultData from './user.default.data';
+// import defaultData from './user.default.data';
+import defaultData from '../../dataBaseJson/default.data.json';
 
 const getAllUsers = () => {
   return defaultData.userData;
@@ -61,6 +62,11 @@ const updateUser = async (id, newUser) => {
     return oldUser;
   }
   // returns undefined if user is not found
+};
+
+export const getUserByEmail = (email) => {
+  const user = defaultData.userData.find((user) => user.email === email);
+  return user;
 };
 
 const userService = {
