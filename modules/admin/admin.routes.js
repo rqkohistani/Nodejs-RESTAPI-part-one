@@ -8,6 +8,7 @@ const routes = () => {
   adminRouter.get('/',securityMiddleware, getAllAdmins);
   adminRouter.get('/:id', securityMiddleware,getAdmin);
   adminRouter.post('/', securityMiddleware,adminValidators.createAdmin,createAdmin);
+  adminRouter.delete('/:id', securityMiddleware,adminValidators.deleteAdmin, deleteAdmin);
   return adminRouter;
 };
 
