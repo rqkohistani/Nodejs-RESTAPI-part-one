@@ -13,6 +13,10 @@ const getUser = (id) => {
   return user;
 };
 
+const getAdminUser = (id) => {
+  const user = defaultData.user.find((user) => user.id === id);
+  return user;
+};
 const createUser = (user) => {
   const newUser = {
     // This Id is not unique. Since default data file length is used. This is not a problem. This is just a reminder.
@@ -75,6 +79,7 @@ const userService = {
   createUser,
   deleteUser,
   updateUser,
+  getAdminUser,
 };
 
 export default userService;
