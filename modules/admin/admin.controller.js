@@ -31,3 +31,14 @@ const createAdmin = (req, res, next) => {
     next(error);
   }
 };
+
+const deleteAdmin = (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const admin = adminService.deleteAdmin(id);
+    if (!admin) throw new HttpError(404, 'Admin not found.');
+    res.status(200).send(admin);
+  } catch (error) {
+    next(error);
+  }
+};
