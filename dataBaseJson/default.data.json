@@ -1,27 +1,16 @@
 {
   "user": [
     {
-      "id": 1,
-      "name": "Rashed",
-      "email": "rashed@gmail.com",
-      "password": "$2b$10$Up3iXfmCWpMUhBua7ZOuTOdRMzcnOKqUOr7TEkmrxPGUIgD5.Qi6e",
-      "non-hashed-password": "password",
-      "userRole": "admin",
-      "createdAt": "2022-08-18T13:03:48.369Z",
-      "updatedAt": "2022-08-18T13:03:48.369Z"
+      "id": 1660927241145,
+      "name": "Super admin",
+      "email": "superadmin@softhouse.se",
+      "password": "$2b$10$W.8GgFAfygzZHfS.F9OVC.dY6dzFLlZeAVhZWvOpG0PeXG0FUWSzK",
+      "userRole": "superAdmin",
+      "createdAt": "2022-08-19T16:40:41.221Z",
+      "updatedAt": "2022-08-19T16:40:41.221Z"
     },
     {
-      "id": 2,
-      "name": "admin",
-      "email": "admin@gmail.com",
-      "password": "$2b$10$cwea.F0sMifNi2A8RAU91O2XGuN1YkufZGZUCd2iTbv08njht5tXu",
-      "non-hashed-password": "password",
-      "userRole": "admin",
-      "createdAt": "2022-08-18T13:03:48.369Z",
-      "updatedAt": "2022-08-18T13:03:48.369Z"
-    },
-    {
-      "id": 3,
+      "id": 1660827980000,
       "name": "Softhouse",
       "email": "softhouse@softhouse.se",
       "password": "$2b$10$4IdUNS4dNkRu8Lm.BlC0Q.k50n/9jc7s/RLE0yk7r8vtndlsROFjO",
@@ -31,7 +20,27 @@
       "updatedAt": "2022-08-18T13:06:20.463Z"
     },
     {
-      "id": 4,
+      "id": 1660827888000,
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$cwea.F0sMifNi2A8RAU91O2XGuN1YkufZGZUCd2iTbv08njht5tXu",
+      "non-hashed-password": "password",
+      "userRole": "admin",
+      "createdAt": "2022-08-18T13:04:48.369Z",
+      "updatedAt": "2022-08-18T13:04:48.369Z"
+    },
+    {
+      "id": 1660827828000,
+      "name": "Rashed",
+      "email": "rashed@gmail.com",
+      "password": "$2b$10$Up3iXfmCWpMUhBua7ZOuTOdRMzcnOKqUOr7TEkmrxPGUIgD5.Qi6e",
+      "non-hashed-password": "password",
+      "userRole": "admin",
+      "createdAt": "2022-08-18T13:03:48.369Z",
+      "updatedAt": "2022-08-18T13:03:48.369Z"
+    },
+    {
+      "id": 1660828340000,
       "name": "user1",
       "email": "user1@softhouse.se",
       "password": "$2b$10$HaFUqjDoimDa55nfCJaMuOwmQso6ElyQvoI88AYA4hGL/rluuMCKm",
@@ -41,7 +50,7 @@
       "updatedAt": "2022-08-19T13:12:02.207Z"
     },
     {
-      "id": 5,
+      "id": 1660828353000,
       "name": "user2",
       "email": "user2@softhouse.se",
       "password": "$2b$10$rRTsyB92FqSCD56zIj/04udY1V1bbMm3XyjJTrO/AizHd.17Ewy.G",
@@ -52,6 +61,14 @@
     }
   ],
   "userData": [
+    {
+      "id": 1660663145000,
+      "name": "Softhouse",
+      "password": "$2b$10$50Gh6rw6jfk2WgVHyRIkV.ijzZo5ztiEgTaUObs8zLqZB9ycN.GGm",
+      "email": "softhouse@gmail.com",
+      "createdAt": "2022-08-16T15:16:28.397Z",
+      "updatedAt": "2022-08-16T15:16:28.397Z"
+    },
     {
       "id": 1660663805000,
       "name": "Rashed",
@@ -77,6 +94,14 @@
       "updatedAt": "2022-08-16T15:15:52.044Z"
     },
     {
+      "id": 1660663025000,
+      "name": "Hadi",
+      "password": "$2b$10$XC950MEYFQQX/Ewop7W5..tPLztIydvc.4LzGx2gARo8GlsxcWcEW",
+      "email": "hadi@gmail.com",
+      "createdAt": "2022-08-16T15:16:21.632Z",
+      "updatedAt": "2022-08-16T15:16:21.632Z"
+    },
+    {
       "id": 1660665965000,
       "name": "John",
       "password": "$2b$10$BvDQ0KGk8z67QsvTnZFu9ua8uY.Hz3ptRagoHLzN86J9Av4SvrbSa",
@@ -91,22 +116,6 @@
       "email": "joe@gmail.com",
       "createdAt": "2022-08-16T15:16:13.785Z",
       "updatedAt": "2022-08-16T15:16:13.785Z"
-    },
-    {
-      "id": 1660663025000,
-      "name": "Hadi",
-      "password": "$2b$10$XC950MEYFQQX/Ewop7W5..tPLztIydvc.4LzGx2gARo8GlsxcWcEW",
-      "email": "hadi@gmail.com",
-      "createdAt": "2022-08-16T15:16:21.632Z",
-      "updatedAt": "2022-08-16T15:16:21.632Z"
-    },
-    {
-      "id": 1660663145000,
-      "name": "Softhouse",
-      "password": "$2b$10$50Gh6rw6jfk2WgVHyRIkV.ijzZo5ztiEgTaUObs8zLqZB9ycN.GGm",
-      "email": "softhouse@gmail.com",
-      "createdAt": "2022-08-16T15:16:28.397Z",
-      "updatedAt": "2022-08-16T15:16:28.397Z"
     }
   ]
 }
