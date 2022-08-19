@@ -19,9 +19,7 @@ const getAdminUser = (id) => {
 };
 const createUser = (user) => {
   const newUser = {
-    // This Id is not unique. Since default data file length is used. This is not a problem. This is just a reminder.
-    // This will be handled in when validation is implemented Or database. FOR NOW, let's just use the length of the json userData array.
-    id: defaultData.userData.length + 1,
+    id: new Date().getTime(),
     ...user,
     password: bcrypt.hashSync(user.password, 10),
     createdAt: new Date().toISOString(),
