@@ -47,8 +47,8 @@ const deleteUser = (id) => {
   return user;
 };
 
-// FIXME: It does update the user but it does not return the updated user.
-// FIXME: if user is not found, it returns {}.
+// FIXME: It does update the user but it does not return to the user the updated user in postman body response.
+// FIXME: if user is not found, it returns {}- in postman body response.
 const updateUser = async (id, newUser) => {
   const oldUser = defaultData.userData.find((user) => user.id === id);
   if (oldUser) {
