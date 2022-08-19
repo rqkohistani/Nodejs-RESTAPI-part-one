@@ -51,9 +51,9 @@ const updateUser = async (id, newUser) => {
         return {
           id: user.id,
           ...user,
+          ...newUser,
           password: bcrypt.hashSync(user.password, 10),
           updatedAt: new Date().toISOString(),
-          ...newUser,
         };
       }
       return user;
