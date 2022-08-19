@@ -1,13 +1,11 @@
 import fs from 'fs';
 import bcrypt from 'bcrypt';
-// import defaultData from './user.default.data';
 import defaultData from '../../dataBaseJson/default.data.json';
 
 const getAllUsers = () => {
   return defaultData.userData;
 };
 
-// TODO: validate req.body
 const getUser = (id) => {
   const user = defaultData.userData.find((user) => user.id === id);
   return user;
@@ -49,6 +47,8 @@ const deleteUser = (id) => {
   return user;
 };
 
+// FIXME: It does update the user but it does not return the updated user.
+// FIXME: if user is not found, it returns {}.
 const updateUser = async (id, newUser) => {
   const oldUser = defaultData.userData.find((user) => user.id === id);
   if (oldUser) {
