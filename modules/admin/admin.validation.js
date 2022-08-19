@@ -52,6 +52,7 @@ export { createAdmin };
 const adminValidators = {
   createAdmin,
   updateAdmin,
+  deleteAdmin,
 };
 
 export default adminValidators;
