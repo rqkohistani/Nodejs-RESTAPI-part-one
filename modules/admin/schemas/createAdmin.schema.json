@@ -8,6 +8,7 @@
     "name": { "type": "string", "minLength": 1 },
     "email": { "type": "string", "format": "email" },
     "password": { "type": "string", "minLength": 8 },
+    "userRole": { "enum": ["admin", "user"] },
     "createdAt": {
       "type": "string",
       "format": "date-time",
@@ -24,5 +25,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["name", "email", "password"]
+  "required": ["name", "email", "password", "userRole"]
 }
