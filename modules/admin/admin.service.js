@@ -1,3 +1,5 @@
+import fs from 'fs';
+import bcrypt from 'bcrypt';
 import defaultData from '../../dataBaseJson/default.data.json';
 
 const getAllAdmins = () => {
@@ -64,3 +66,13 @@ const updateAdmin = async (id, newAdmin) => {
     return oldAdmin;
   }
 };
+
+const adminService = {
+  createAdmin,
+  getAllAdmins,
+  getAdmin,
+  deleteAdmin,
+  updateAdmin,
+};
+
+export default adminService;
