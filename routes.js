@@ -14,6 +14,7 @@ const routes = () => {
   return router;
 };
 
+// TODO: Add Routes NOT FOUND
 export const notFoundRoute = (req, res) => {
   return res.status(404).send('routeNotFoundMessage');
 };
