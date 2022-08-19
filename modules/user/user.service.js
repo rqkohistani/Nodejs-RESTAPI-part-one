@@ -23,20 +23,20 @@ const createUser = (user) => {
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
-  const data = fs.readFileSync('./modules/user/user.default.data.json');
+  const data = fs.readFileSync('./dataBaseJson/default.data.json');
   const users = JSON.parse(data);
   const newUserData = [...users.userData, newUser];
-  fs.writeFileSync('./modules/user/user.default.data.json', JSON.stringify({ userData: newUserData }));
+  fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
   return newUser;
 };
 
 const deleteUser = (id) => {
   const user = defaultData.userData.find((user) => user.id === id);
   if (user) {
-    const data = fs.readFileSync('./modules/user/user.default.data.json');
+    const data = fs.readFileSync('./dataBaseJson/default.data.json');
     const users = JSON.parse(data);
     const newUserData = users.userData.filter((user) => user.id !== id);
-    fs.writeFileSync('./modules/user/user.default.data.json', JSON.stringify({ userData: newUserData }));
+    fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
   }
   return user;
 };
@@ -44,24 +44,24 @@ const deleteUser = (id) => {
 const updateUser = async (id, newUser) => {
   const oldUser = defaultData.userData.find((user) => user.id === id);
   if (oldUser) {
-    const data = fs.readFileSync('./modules/user/user.default.data.json');
+    const data = fs.readFileSync('./dataBaseJson/default.data.json');
     const users = JSON.parse(data);
     const newUserData = users.userData.map((user) => {
       if (user.id === id) {
         return {
           id: user.id,
           ...user,
+          ...newUser,
           password: bcrypt.hashSync(user.password, 10),
           updatedAt: new Date().toISOString(),
-          ...newUser,
         };
       }
       return user;
     });
-    fs.writeFileSync('./modules/user/user.default.data.json', JSON.stringify({ userData: newUserData }));
-    return oldUser;
+    console.log('newUserData', newUserData);
+  fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
+    return oldUser; 
   }
-  // returns undefined if user is not found
 };
 
 export const getUserByEmail = (email) => {

@@ -1,7 +1,5 @@
-const DEFAULT_ERROR = {
-  status: 500,
-  message: 'Something went wrong.',
-};
+import { DEFAULT_ERROR } from './constants';
+
 const errorHandler = (error, req, res, next) => {
   if (!error) return next();
 
