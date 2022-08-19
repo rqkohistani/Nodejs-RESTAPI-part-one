@@ -41,7 +41,10 @@ const deleteUser = (id) => {
     const data = fs.readFileSync('./dataBaseJson/default.data.json');
     const users = JSON.parse(data);
     const newUserData = users.userData.filter((user) => user.id !== id);
-    fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
+    fs.writeFileSync(
+      './dataBaseJson/default.data.json',
+      JSON.stringify({ user: [...defaultData.user], userData: newUserData })
+    );
   }
   return user;
 };
