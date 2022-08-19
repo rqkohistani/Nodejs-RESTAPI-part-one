@@ -51,7 +51,7 @@ const deleteUser = (req, res, next) => {
  * or delete a user only if the user is inactive for a certain period of time
  * or remove this function
  */
-
+// TODO: This is fixed now. Only super admin and admin can delete a user. However, Let's keep this function for now.
 const secretProvided = (secret) => { 
   if (secret === 'secret') {
     return true;
