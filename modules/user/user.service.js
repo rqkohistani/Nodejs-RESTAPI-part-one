@@ -17,6 +17,7 @@ const getAdminUser = (id) => {
   const user = defaultData.user.find((user) => user.id === id);
   return user;
 };
+
 const createUser = (user) => {
   const newUser = {
     id: new Date().getTime(),
@@ -27,8 +28,10 @@ const createUser = (user) => {
   };
   const data = fs.readFileSync('./dataBaseJson/default.data.json');
   const users = JSON.parse(data);
-  const newUserData = [...users.userData, newUser];
-  fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
+  fs.writeFileSync(
+    './dataBaseJson/default.data.json',
+    JSON.stringify({ ...users, userData: [...users.userData, newUser] })
+  );
   return newUser;
 };
 
