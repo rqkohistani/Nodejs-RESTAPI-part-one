@@ -44,10 +44,8 @@ const getUserFromAuthToken = async (authToken) => {
   try {
     const token = authToken?.split('Bearer ').pop();
     if (!token) throw new HttpError(401, 'No token provided');
-    const { userId } = jwt.verify(token, APPSETTING_JWT_SECRET);
-    console.log('userId', userId);
-    const user = userService.getUser(userId);
-    console.log('user', user);
+    const { id } = jwt.verify(token, APPSETTING_JWT_SECRET);
+    const user = userService.getAdminUser(id);
     if (!user) throw new HttpError(401, 'Invalid token11');
     return user;
   } catch (err) {
