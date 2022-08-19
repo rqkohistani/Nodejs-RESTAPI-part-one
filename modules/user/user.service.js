@@ -1,23 +1,24 @@
 import fs from 'fs';
 import bcrypt from 'bcrypt';
-// import defaultData from './user.default.data';
 import defaultData from '../../dataBaseJson/default.data.json';
 
 const getAllUsers = () => {
   return defaultData.userData;
 };
 
-// TODO: validate req.body
 const getUser = (id) => {
   const user = defaultData.userData.find((user) => user.id === id);
   return user;
 };
 
+const getAdminUser = (id) => {
+  const user = defaultData.user.find((user) => user.id === id);
+  return user;
+};
+
 const createUser = (user) => {
   const newUser = {
-    // This Id is not unique. Since default data file length is used. This is not a problem. This is just a reminder.
-    // This will be handled in when validation is implemented Or database. FOR NOW, let's just use the length of the json userData array.
-    id: defaultData.userData.length + 1,
+    id: new Date().getTime(),
     ...user,
     password: bcrypt.hashSync(user.password, 10),
     createdAt: new Date().toISOString(),
@@ -25,8 +26,10 @@ const createUser = (user) => {
   };
   const data = fs.readFileSync('./dataBaseJson/default.data.json');
   const users = JSON.parse(data);
-  const newUserData = [...users.userData, newUser];
-  fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
+  fs.writeFileSync(
+    './dataBaseJson/default.data.json',
+    JSON.stringify({ ...users, userData: [...users.userData, newUser] })
+  );
   return newUser;
 };
 
@@ -36,11 +39,16 @@ const deleteUser = (id) => {
     const data = fs.readFileSync('./dataBaseJson/default.data.json');
     const users = JSON.parse(data);
     const newUserData = users.userData.filter((user) => user.id !== id);
-    fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
+    fs.writeFileSync(
+      './dataBaseJson/default.data.json',
+      JSON.stringify({ user: [...defaultData.user], userData: newUserData })
+    );
   }
   return user;
 };
 
+// FIXME: It does update the user but it does not return to the user the updated user in postman body response.
+// FIXME: if user is not found, it returns {}- in postman body response.
 const updateUser = async (id, newUser) => {
   const oldUser = defaultData.userData.find((user) => user.id === id);
   if (oldUser) {
@@ -58,15 +66,25 @@ const updateUser = async (id, newUser) => {
       }
       return user;
     });
-    console.log('newUserData', newUserData);
-  fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
-    return oldUser; 
+    fs.writeFileSync(
+      './dataBaseJson/default.data.json',
+      JSON.stringify({ user: [...defaultData.user], userData: newUserData })
+    );
+    return oldUser;
   }
+  return oldUser; // return null if user not found
+};
+
+const checkEmail = (email) => {
+  const user = defaultData.user.find((user) => user.email === email);
+  return user;
 };
 
 export const getUserByEmail = (email) => {
-  const user = defaultData.userData.find((user) => user.email === email);
-  return user;
+  if (checkEmail(email)) {
+    return defaultData.user.find((user) => user.email === email);
+  }
+  return defaultData.userData.find((user) => user.email === email);
 };
 
 const userService = {
@@ -75,6 +93,7 @@ const userService = {
   createUser,
   deleteUser,
   updateUser,
+  getAdminUser,
 };
 
 export default userService;
