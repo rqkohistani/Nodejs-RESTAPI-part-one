@@ -5,6 +5,8 @@ import securityMiddleware from '../../middleware/security';
 
 const routes = () => {
   const adminRouter = express.Router();
+  adminRouter.get('/',securityMiddleware, getAllAdmins);
+  adminRouter.get('/:id', securityMiddleware,getAdmin);
   adminRouter.post('/', securityMiddleware,adminValidators.createAdmin,createAdmin);
   return adminRouter;
 };
