@@ -66,10 +66,15 @@ const updateUser = async (id, newUser) => {
       }
       return user;
     });
-    console.log('newUserData', newUserData);
-  fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify({ userData: newUserData }));
-    return oldUser; 
+    fs.writeFileSync(
+      './dataBaseJson/default.data.json',
+      JSON.stringify({ user: [...defaultData.user], userData: newUserData })
+    );
+    return oldUser;
   }
+  return oldUser; // return null if user not found
+};
+
 const checkEmail = (email) => {
   const user = defaultData.user.find((user) => user.email === email);
   return user;
