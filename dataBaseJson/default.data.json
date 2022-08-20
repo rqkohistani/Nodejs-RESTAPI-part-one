@@ -65,16 +65,50 @@
       "name": "Jonas",
       "password": "$2b$10$J8bUavalJmX6Bnu.904b3Ow8d8UWtih5PxxkiovqIiamn2Xeoye3a",
       "email": "jonas@gmail.com",
-      "posts": [],
+      "posts": [
+        {
+          "id": 956467,
+          "userId": 1660664645000,
+          "title": "Post title 4",
+          "body": "This is the body",
+          "createdAt": "2022-08-20T17:48:48.230Z",
+          "updatedAt": "2022-08-20T17:48:48.230Z"
+        },
+        {
+          "id": 883228,
+          "userId": 1660664645000,
+          "title": "Post title 2",
+          "body": "This is the body",
+          "createdAt": "2022-08-20T18:09:32.720Z",
+          "updatedAt": "2022-08-20T18:23:23.329Z",
+          "postId": 883228
+        }
+      ],
       "createdAt": "2022-08-16T15:15:44.291Z",
-      "updatedAt": "2022-08-16T15:15:44.291Z"
+      "updatedAt": "2022-08-20T18:23:23.329Z"
     },
     {
       "id": 1660665125000,
       "name": "Robin",
       "password": "$2b$10$Oi8SeIbRF74I9Dzo9/eVse64fu0ho4POIdjS/He2FajYpX5Pz.Rj.",
       "email": "robin@gmail.com",
-      "posts": [],
+      "posts": [
+        {
+          "id": 961504,
+          "title": "Facere veritatis culpa at ullam voluptatem tempora ad.",
+          "body": "Aspernatur voluptas occaecati est explicabo aperiam. Illum culpa esse laborum suscipit provident rerum. Nulla assumenda est aut itaque sed eaque vel. Et quidem repellat non illo cum et sit ab blanditiis. Qui distinctio in.",
+          "createdAt": "2022-08-20T18:42:07.002Z",
+          "updatedAt": "2022-08-20T18:42:07.002Z"
+        },
+        {
+          "id": 120128,
+          "userId": 1660665125000,
+          "title": "auto generates",
+          "body": "auto generates ",
+          "createdAt": "2022-08-20T19:20:51.008Z",
+          "updatedAt": "2022-08-20T19:20:51.008Z"
+        }
+      ],
       "createdAt": "2022-08-16T15:15:52.044Z",
       "updatedAt": "2022-08-16T15:15:52.044Z"
     },
