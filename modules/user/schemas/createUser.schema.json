@@ -8,6 +8,10 @@
     "name": { "type": "string", "minLength": 1 },
     "email": { "type": "string", "format": "email" },
     "password": { "type": "string", "minLength": 8 },
+    "posts": {
+      "type": "array",
+      "items": [{ "type": "string" }]
+    },
     "createdAt": {
       "type": "string",
       "format": "date-time",
