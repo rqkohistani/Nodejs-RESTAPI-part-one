@@ -13,6 +13,20 @@ const getPostByUserId = async (req, res, next) => {
     return next(new HttpError(error.message, 500));
   }
 };
+const updatePost = async (req, res, next) => {
+  try {
+    const userId = parseInt(req.baseUrl.split('/')[4], 10); // get the user id from the url
+    const postId = parseInt(req.body.postId, 10); // get the post id from the url
+    const postData = req.body;
+    const userPost = await userPostService.updatePost(userId, postId, postData);
+    if (userPost) {
+      return res.status(200).json(userPost);
+    }
+    return res.status(404).json({ message: 'user Post Not Found' });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
 const createPost = async (req, res, next) => {
   try {
     const userId = parseInt(req.baseUrl.split('/')[4], 10); // get the user id from the url
