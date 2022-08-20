@@ -1,6 +1,13 @@
 import fs from 'fs';
 import defaultData from '../../dataBaseJson/default.data.json';
 
+const getPostByUserId = async (userId) => {
+  const user = defaultData.userDataLists.find((user) => user.id === userId);
+  if (user) {
+    return user.posts;
+  }
+  return [];
+};
 
 const createPost = async (userId, postData) => {  
   const user = defaultData.userDataLists.find((user) => user.id === userId);
