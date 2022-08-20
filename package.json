@@ -30,6 +30,7 @@
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
     "nodemon": "^2.0.19"
   }
 }
