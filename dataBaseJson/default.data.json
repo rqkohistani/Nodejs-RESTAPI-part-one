@@ -1,15 +1,6 @@
 {
   "adminsAndUsersLists": [
     {
-      "id": 1660927241145,
-      "name": "Super admin",
-      "email": "superadmin@softhouse.se",
-      "password": "$2b$10$W.8GgFAfygzZHfS.F9OVC.dY6dzFLlZeAVhZWvOpG0PeXG0FUWSzK",
-      "userRole": "superAdmin",
-      "createdAt": "2022-08-19T16:40:41.221Z",
-      "updatedAt": "2022-08-19T16:40:41.221Z"
-    },
-    {
       "id": 1660827980000,
       "name": "Softhouse",
       "email": "softhouse@softhouse.se",
@@ -30,16 +21,6 @@
       "updatedAt": "2022-08-18T13:04:48.369Z"
     },
     {
-      "id": 1660827828000,
-      "name": "Rashed",
-      "email": "rashed@gmail.com",
-      "password": "$2b$10$Up3iXfmCWpMUhBua7ZOuTOdRMzcnOKqUOr7TEkmrxPGUIgD5.Qi6e",
-      "non-hashed-password": "password",
-      "userRole": "admin",
-      "createdAt": "2022-08-18T13:03:48.369Z",
-      "updatedAt": "2022-08-18T13:03:48.369Z"
-    },
-    {
       "id": 1660828340000,
       "name": "user1",
       "email": "user1@softhouse.se",
@@ -58,15 +39,6 @@
       "userRole": "user",
       "createdAt": "2022-08-19T13:12:33.725Z",
       "updatedAt": "2022-08-19T13:12:33.725Z"
-    },
-    {
-      "id": 1660971623125,
-      "name": "Super admin",
-      "email": "superadmin@softhouse.se",
-      "password": "$2b$10$2ysZCQ1pTwdtEOJF7CSFYOD2Ni47vNbBGKGzDfGx0NzBvyUXjW57G",
-      "userRole": "admin",
-      "createdAt": "2022-08-20T05:00:23.189Z",
-      "updatedAt": "2022-08-20T05:00:23.189Z"
     }
   ],
   "userDataLists": [
