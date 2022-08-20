@@ -34,7 +34,47 @@ const deletePost = async (userId, postId) => {
   }
   return user;
 };
-const createPost = async (userId, postData) => {  
+
+const updatePost = async (userId, postId, postData) => {
+  const user = defaultData.userDataLists.find((user) => user.id === userId);
+  if (user) {
+    const data = fs.readFileSync('./dataBaseJson/default.data.json');
+    const users = JSON.parse(data);
+    const newUserData = users.userDataLists.map((user) => {
+      if (user.id === userId) { 
+        const newPosts = user.posts.map((post) => {
+          if (post.id === postId) {
+            return {
+              id: post.id,
+              ...post,
+              ...postData,
+              updatedAt: new Date().toISOString(),
+            };
+          }
+          return post;
+        });
+        return {
+          id: user.id,
+          ...user,
+          posts: newPosts,
+          updatedAt: new Date().toISOString(),
+        };
+
+      }
+      return user;
+    });
+    fs.writeFileSync(
+      './dataBaseJson/default.data.json',
+      JSON.stringify({ adminsAndUsersLists: [...defaultData.adminsAndUsersLists], userDataLists: newUserData })
+    );
+    return user;
+  }
+  return user;
+};
+
+
+
+const createPost = async (userId, postData) => {
   const user = defaultData.userDataLists.find((user) => user.id === userId);
   if (user) {
     const data = fs.readFileSync('./dataBaseJson/default.data.json');
@@ -63,9 +103,11 @@ const createPost = async (userId, postData) => {
   return user; // return null if user not found
 };
 
-
 const userPostService = {
   createPost,
+  getPostByUserId,
+  deletePost,
+  updatePost,
 };
 
 export default userPostService;
