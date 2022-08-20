@@ -131,33 +131,6 @@
       "posts": [],
       "createdAt": "2022-08-16T15:16:13.785Z",
       "updatedAt": "2022-08-16T15:16:13.785Z"
-    },
-    {
-      "id": 1660971163998,
-      "email": "test@gmail.com",
-      "name": "Softhouse",
-      "password": "$2b$10$PmZr.7EW3PO/xncXQP9YEuwaVaZsO/rJZYhPWSvgVXBggcDi0E.n6",
-      "posts": [],
-      "createdAt": "2022-08-20T04:52:44.065Z",
-      "updatedAt": "2022-08-20T04:52:44.065Z"
-    },
-    {
-      "id": 1660971338002,
-      "name": "Softhouse",
-      "email": "test@gmail.com",
-      "password": "$2b$10$ieBCPMgSKIgDbdEj7HR0K.k6J4NgufoKGlREQG6CJpcSt00vIUeYu",
-      "posts": [],
-      "createdAt": "2022-08-20T04:55:38.071Z",
-      "updatedAt": "2022-08-20T04:55:38.071Z"
-    },
-    {
-      "id": 1660971878483,
-      "name": "Softhouse",
-      "email": "test@gmail.com",
-      "password": "$2b$10$EHudq8dVvPQ1R7d7tJAjm.zmgqSXMXDwWw9k7OBH8hXjF.DpHLkku",
-      "posts": [],
-      "createdAt": "2022-08-20T05:04:38.544Z",
-      "updatedAt": "2022-08-20T05:04:38.544Z"
     }
   ]
 }
