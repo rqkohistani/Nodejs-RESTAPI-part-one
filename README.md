@@ -19,27 +19,31 @@ The APIs could be improve over time to be more secure.
       - select an admin or user
 2. Save the token
     - Click on the Nodejs REST API part one V1 collection
-    - go to Variables
-    - paste in the tokeny
+    - Go to Variables
+    - Paste in the token
     - tokenPartOneV1
-    - Make sure one of tokenPartOneV1 selected
+    - Make sure one of tokenPartOneV1 is selected. 
+      - Multiple of tokenPartOneV1 can be used but one must be selected at the time.
     - Note: at the same multiple user could been logged in.
     - click on the Save button
     - ![Save the token](./GithubImages/loginToken.PNG)
 
-3. Use the ***me** route to see if you are logged in
+3. The  ***Get ...auth/me** route to see if you are logged in
     - Click on the me route
     - Click on the Send button
+    - if successful you should see the following
+    - else you will see a "message": "Invalid token"
     - ![me route](./GithubImages/meRoute.PNG)
 
+***
 ### Create an admin or user
 
 1. Click on the admin/admin post route
 2. Fill new Admin or user credentials in the Body
-3. Validation is would take of if unnecessary fields are added
+3. Validation would take care of if unnecessary fields are added.
 4. Click Send
 5. ![Create an admin](./GithubImages/newAdmin.PNG)
-6. ![Admin created](./GithubImages/./GithubImages/newAdminCreated.PNG)
+6. ![Admin created](./GithubImages/newAdminCreated.PNG)
 
 ***
 
@@ -49,24 +53,28 @@ The APIs could be improve over time to be more secure.
 2. Edit Admin or user credentials in the Body
 3. Params
     - id: the id of the admin or user
-4. Validation is would take of if unnecessary fields are added
+4. Validation would take care of if unnecessary fields are added.
 5. Click Send
 6. ![Update an admin](./GithubImages/updateAdminBody.PNG)
 7. ![Update an admin](./GithubImages/updateAdminParams.PNG)
-    - check the data or get the admin or user route to see if the admin or user has been updated
+    - Check the data or get the admin or user route to see if the admin or user has been updated
 
 8. ![Admin updated](./GithubImages/getAdminByAdminId.PNG)
-9. delete the admin or user
+
+
+### Other admin or user routes are the same. you can check them out. You got the idea
 
 The rest would be the same. You got the idea.
 
 ***
 
-## create a new user. OBS: the user is not an admin or user. It is a new user. The could be renamed to customer or client. It is up to you. However, lets keep it this way for now
+## Create a new user
 
-1. Click on the user/user post route
+### OBS: the user is not an admin or user. It could be renamed to customer or client. It is up to you. However, lets keep it this way for now
+
+1. Click on the user/user route
 2. Fill new user credentials in the Body
-3. Validation is would take of if unnecessary fields are added
+3. Validation would take care of if unnecessary fields are added.
 4. Click Send
 5. ![Create a new user](./GithubImages/newUser.PNG)
 6. ![User created](./GithubImages/newUserCreated.PNG)
@@ -77,21 +85,23 @@ The rest would be the same. You got the idea.
 
 ## Update a user
 
-1. Click on the user/user upate route
-2. Edit user credentials in the Body
-3. Params
+1. Before updating the user details
+1. ![User Befor Updates](./GithubImages/newUserBeforUpdates.PNG)
+1. Click on the user/user update route
+1. Edit user credentials in the Body
+1. Params
     - id: the id of the user
-4. Validation is would take of if unnecessary fields are added
-5. Click Send
-6. ![User Befor Updates](./GithubImages/newUserBeforUpdates.PNG)
-7. ![Update a user postman](./GithubImages/updateUserParams_body.PNG)
+1. Validation would take care of if unnecessary fields 1re added.
+1. Click Send
+1. ![Update a user postman](./GithubImages/updateUserParams_body.PNG)
     - check the data or get the user route to see if the user has been updated
 
-8. ![Update a user database](./GithubImages/updateUserParams_body_DB.PNG)
+1. ![Update a user database](./GithubImages/updateUserParams_body_DB.PNG)
 
 ## Delete a user
 
-Delete a user is the same as delete an admin. However, at the time of writing the delete user function the word "secret" field in the body must be presented. This is to prevent an admin from deleting another user. Without the secret word "secret" the admin cannot delete the user.
+Delete a user is the same as delete an admin. However, at the time of coding the delete user function the word "secret" field in the body must be have been presented. This is to prevent an admin from deleting another user. Without the secret word "secret" the admin cannot delete the user.
+It can be handle in roles and permissions. However, for now it is like this.
 
 1. Click on the user/user delete route
 2. Params
@@ -103,16 +113,18 @@ Delete a user is the same as delete an admin. However, at the time of writing th
 6. ![Delete the user](./GithubImages/deleteUserBody.PNG)
 7. ![Deleted the user](./GithubImages/deleteUseDeleted.PNG)
 
-## create a user post
+***
+
+## Create a user post
 
 1. Click on the user/user post route
-2. Fill new post userId, title and body in the Body
-3. OBS: Validation is would take of if unnecessary fields are added
+2. Fill the post body with userId, title and body in as the json format
+3. OBS: Validation would take care of if unnecessary fields are added.
 4. Click Send
 5. ![Create a new user post](./GithubImages/newUserPost.PNG)
 6. ![User created](./GithubImages/newUserPostCreated.PNG)
 7. Go to user get a user post by user id
-    - you should see the new user post
+    - You should see the new user post
 
 8. ![Get all user post by user id](./GithubImages/newUserAllUserPostByUserId.PNG)
 
@@ -124,17 +136,15 @@ Delete a user is the same as delete an admin. However, at the time of writing th
 2. Edit user post userId, title and body in the Body
 3. Params
     - id: the id of the user post
-4. Validation is would take of if unnecessary fields are added
+4. Validation would take care of if unnecessary fields are added.
 5. Click Send
 6. ![User post Befor Updates](./GithubImages/userpostBeforeUpdates.PNG)
 7. ![User post body](./GithubImages/updateApostByPostIdandUseridBody.PNG)
 8. ![User post params](./GithubImages/updateApostByPostIdandUseridParams.PNG)
-9. ![Updated a user post](./GithubImages/updateApostByPostIdandUserid.PNG)
+9. ![Updated the user post](./GithubImages/updatedpostByPostIdandUserid.PNG)
     - check the data or get the user post route to see if the user post has been updated
 
-10. ![Update a user post database](./GithubImages/updateUserPostParams_body_DB.PNG)
-
-## Delete a user post
+## Delete user post
 
 1. Click on the user/user post delete route
 2. Params
@@ -145,3 +155,6 @@ Delete a user is the same as delete an admin. However, at the time of writing th
 
 ***
 
+### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT. PLEASE FEEL FREE TO CONTACT ME IF YOU HAVE ANY QUESTIONS OR SUGGESTIONS. THANK YOU
+
+[linkedIn](https://www.linkedin.com/in/rashed-qazizada-1b64b68a/)
