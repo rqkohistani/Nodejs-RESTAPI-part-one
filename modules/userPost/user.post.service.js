@@ -1,5 +1,4 @@
 import fs from 'fs';
-import { faker } from '@faker-js/faker';
 import defaultData from '../../dataBaseJson/default.data.json';
 
 const getPostByUserId = async (userId) => {
