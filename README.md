@@ -25,12 +25,12 @@ The APIs could be improve over time to be more secure.
     - Make sure one of tokenPartOneV1 selected
     - Note: at the same multiple user could been logged in.
     - click on the Save button
-    - ![Save the token](loginToken.PNG)
+    - ![Save the token](./GithubImages/loginToken.PNG)
 
 3. Use the ***me** route to see if you are logged in
     - Click on the me route
     - Click on the Send button
-    - ![me route](meRoute.PNG)
+    - ![me route](./GithubImages/meRoute.PNG)
 
 ### Create an admin or user
 
@@ -38,8 +38,8 @@ The APIs could be improve over time to be more secure.
 2. Fill new Admin or user credentials in the Body
 3. Validation is would take of if unnecessary fields are added
 4. Click Send
-5. ![Create an admin](newAdmin.PNG)
-6. ![Admin created](newAdminCreated.PNG)
+5. ![Create an admin](./GithubImages/newAdmin.PNG)
+6. ![Admin created](./GithubImages/./GithubImages/newAdminCreated.PNG)
 
 ***
 
@@ -51,11 +51,11 @@ The APIs could be improve over time to be more secure.
     - id: the id of the admin or user
 4. Validation is would take of if unnecessary fields are added
 5. Click Send
-6. ![Update an admin](updateAdminBody.PNG)
-7. ![Update an admin](updateAdminParams.PNG)
+6. ![Update an admin](./GithubImages/updateAdminBody.PNG)
+7. ![Update an admin](./GithubImages/updateAdminParams.PNG)
     - check the data or get the admin or user route to see if the admin or user has been updated
 
-8. ![Admin updated](getAdminByAdminId.PNG)
+8. ![Admin updated](./GithubImages/getAdminByAdminId.PNG)
 9. delete the admin or user
 
 The rest would be the same. You got the idea.
@@ -68,8 +68,8 @@ The rest would be the same. You got the idea.
 2. Fill new user credentials in the Body
 3. Validation is would take of if unnecessary fields are added
 4. Click Send
-5. ![Create a new user](newUser.PNG)
-6. ![User created](newUserCreated.PNG)
+5. ![Create a new user](./GithubImages/newUser.PNG)
+6. ![User created](./GithubImages/newUserCreated.PNG)
 7. Go to getAllUsers route
     - you should see the new user
 
@@ -83,11 +83,11 @@ The rest would be the same. You got the idea.
     - id: the id of the user
 4. Validation is would take of if unnecessary fields are added
 5. Click Send
-6. ![User Befor Updates](newUserBeforUpdates.PNG)
-7. ![Update a user postman](updateUserParams_body.PNG)
+6. ![User Befor Updates](./GithubImages/newUserBeforUpdates.PNG)
+7. ![Update a user postman](./GithubImages/updateUserParams_body.PNG)
     - check the data or get the user route to see if the user has been updated
 
-8. ![Update a user database](updateUserParams_body_DB.PNG)
+8. ![Update a user database](./GithubImages/updateUserParams_body_DB.PNG)
 
 ## Delete a user
 
@@ -99,9 +99,9 @@ Delete a user is the same as delete an admin. However, at the time of writing th
 3. Body
     - secret: "secret"
 4. Click Send
-5. ![Delete the user](deleteUserParamsId.PNG)
-6. ![Delete the user](deleteUserBody.PNG)
-7. ![Deleted the user](deleteUseDeleted.PNG)
+5. ![Delete the user](./GithubImages/deleteUserParamsId.PNG)
+6. ![Delete the user](./GithubImages/deleteUserBody.PNG)
+7. ![Deleted the user](./GithubImages/deleteUseDeleted.PNG)
 
 ## create a user post
 
@@ -109,12 +109,12 @@ Delete a user is the same as delete an admin. However, at the time of writing th
 2. Fill new post userId, title and body in the Body
 3. OBS: Validation is would take of if unnecessary fields are added
 4. Click Send
-5. ![Create a new user post](newUserPost.PNG)
-6. ![User created](newUserPostCreated.PNG)
+5. ![Create a new user post](./GithubImages/newUserPost.PNG)
+6. ![User created](./GithubImages/newUserPostCreated.PNG)
 7. Go to user get a user post by user id
     - you should see the new user post
 
-8. ![Get all user post by user id](newUserAllUserPostByUserId.PNG)
+8. ![Get all user post by user id](./GithubImages/newUserAllUserPostByUserId.PNG)
 
 ***
 
@@ -126,13 +126,13 @@ Delete a user is the same as delete an admin. However, at the time of writing th
     - id: the id of the user post
 4. Validation is would take of if unnecessary fields are added
 5. Click Send
-6. ![User post Befor Updates](userpostBeforeUpdates.PNG)
-7. ![User post body](updateApostByPostIdandUseridBody.PNG)
-8. ![User post params](updateApostByPostIdandUseridParams.PNG)
-9. ![Updated a user post](updateApostByPostIdandUserid.PNG)
+6. ![User post Befor Updates](./GithubImages/userpostBeforeUpdates.PNG)
+7. ![User post body](./GithubImages/updateApostByPostIdandUseridBody.PNG)
+8. ![User post params](./GithubImages/updateApostByPostIdandUseridParams.PNG)
+9. ![Updated a user post](./GithubImages/updateApostByPostIdandUserid.PNG)
     - check the data or get the user post route to see if the user post has been updated
 
-10. ![Update a user post database](updateUserPostParams_body_DB.PNG)
+10. ![Update a user post database](./GithubImages/updateUserPostParams_body_DB.PNG)
 
 ## Delete a user post
 
