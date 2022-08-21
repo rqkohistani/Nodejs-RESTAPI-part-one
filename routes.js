@@ -11,7 +11,7 @@ const routes = () => {
   router.use('/auth', authRouter());
   router.use('/users', userRoutes());
   router.use('/admins', adminRouter());
-  router.use('/posts/:userId', userPostRouter());
+  router.use('/posts', userPostRouter());
 
   return router;
 };
