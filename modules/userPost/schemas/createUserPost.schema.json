@@ -1,6 +1,7 @@
 {
   "type": "object",
   "properties": {
+    "userId": { "type": "integer" },
     "title": {
       "type": "string",
       "minLength": 2
@@ -22,5 +23,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["title", "body"]
+  "required": ["userId","title", "body"]
 }
