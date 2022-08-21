@@ -7,6 +7,95 @@
 	},
 	"item": [
 		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer HeaderAuthorizationText",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"softhouse@softhouse.se\",\r\n    \"password\": \"password\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/auth/login",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password1\": \"password\",\r\n    \"email\": \"jonas@gmail.com\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/auth/logout",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer HeaderAuthorizationText",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/auth/me",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "users",
 			"item": [
 				{
@@ -28,9 +117,21 @@
 				},
 				{
 					"name": "getUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{BaseUrl}}/users/:id",
 							"host": [
@@ -43,7 +144,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "1661065520617"
 								}
 							]
 						}
@@ -57,7 +158,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Robin\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"user\",\r\n    \"email\":\"robin@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Nodejs api- \",\r\n    \"email\":\"nodejs@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -83,7 +184,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n       \"id\": 5,\r\n        \"name\": \"JonasNew\",\r\n        \"password\": \"passwordNew\",\r\n        \"userRole\": \"user\",\r\n        \"email\": \"jonas@gmail.comNew\",\r\n        \"createdAt\": \"2021-08-15T15:42:00.000Z\"\r\n}",
+							"raw": "{\r\n     \"id\":34,\r\n        \"name\": \"New user name\",\r\n        \"password\": \"newPassowrd\",\r\n        \"email\":\"newEmail@gmail.com\",\r\n        \"Notes\":\"updates if the given id in params matches. then name, password, userRole and email can be update it. BBS: you cannot change id\"\r\n       \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,7 +203,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5"
+									"value": "1661065520617"
 								}
 							]
 						}
@@ -116,7 +217,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Rashed\",\r\n    \"password\": \"password\"\r\n}",
+							"raw": "{\r\n    \"secret\": \"secret\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -135,7 +236,278 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "3"
+									"value": "1661065520617"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "admin post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin\",\r\n    \"email\":\"admin@softhouse.se\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/admins",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"New admin Name\",\r\n    \"email\":\"newEmail@softhouse.se\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/admins/:id",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1661064185149"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"secret\": \"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/admins/:id",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1660827888000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAdmins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admins",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdmins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admins/:id",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1661064185149"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user.posts",
+			"item": [
+				{
+					"name": "user create a user post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1661065520617,\r\n    \"title\": \"Post title test  2\",\r\n    \"body\":\"This is the body\",\r\n    \"this would\": \"come\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/posts",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user get a user posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/posts/:userId",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"posts",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1661065520617"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user post update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1661065520617,\r\n    \"title\":\"new title\",\r\n    \"body\": \"new body of the postId\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/posts/:postId",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"posts",
+								":postId"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "361051"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user delete a user post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1660665125000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/posts/:postId",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"posts",
+								":postId"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "961504"
 								}
 							]
 						}
@@ -145,6 +517,16 @@
 			]
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{tokenPartOneV1}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -169,6 +551,23 @@
 		{
 			"key": "BaseUrl",
 			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "tokenPartOneV1",
+			"value": "MY TOKEN -> USER1",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "tokenPartOneV1",
+			"value": "MY TOKEN -> ADMIN-Rashed",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "tokenPartOneV1",
+			"value": "MY TOKEN -> ADMIN-softhouse",
 			"type": "string"
 		}
 	]
