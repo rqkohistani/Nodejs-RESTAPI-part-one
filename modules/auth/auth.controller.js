@@ -22,11 +22,21 @@ const logout = async (req, res, next) => {
   }
 };
 
+const getUserFromAuthToken = async (req, res, next) => {
+  try {
+    const user = await authService.getUserFromAuthToken(req.headers?.authorization);
+    res.status(200).send(user);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const authController = {
   login,
   logout,
+  getUserFromAuthToken,
 };
 
 export default authController;
 
-export { login, logout };
+export { login, logout, getUserFromAuthToken };
