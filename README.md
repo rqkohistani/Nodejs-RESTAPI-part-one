@@ -10,6 +10,14 @@ The APIs could be improve over time to be more secure.
 
 ***
 
+## How to export the APIs to Postman
+
+1. Download the Nodejs REST API partOne V1 .postman_collection.json file on the current repo
+2. Open Postman
+3. Click on the import button
+4. Upload the Nodejs REST API partOne V1 .postman_collection.json file
+5. LOG IN to the APIs
+
 ## Login
 
 ### Login with username and password
