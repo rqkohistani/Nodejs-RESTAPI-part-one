@@ -9,7 +9,12 @@
       "POST/api/v1/users",
       "patch/api/v1/users/{id}",
       "PUT/api/v1/users/{id}",
-      "DELETE/api/v1/users/{id}"
+      "DELETE/api/v1/users/{id}",
+      "GET/api/v1/admins",
+      "GET/api/v1/admins/{id}",
+      "POST/api/v1/admins",
+      "PUT/api/v1/admins/{id}",
+      "DELETE/api/v1/admins/{id}"
     ]
   },
   "superAdmin": {
