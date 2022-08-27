@@ -43,31 +43,33 @@ const deleteAdmin = (id) => {
   return admin;
 };
 
-// FIXME: It does update the user but it does not return to the user the updated user in postman body response.
-// FIXME: if user is not found, it returns {}- in postman body response.
 const updateAdmin = async (id, newAdmin) => {
-  const oldAdmin = defaultData.adminsAndUsersLists.find((admin) => admin.id === id);
-  if (oldAdmin) {
-    const data = fs.readFileSync('./dataBaseJson/default.data.json');
-    const admins = JSON.parse(data);
-    const newAdminData = admins.adminsAndUsersLists.map((admin) => {
-      if (admin.id === id) {
-        return {
-          id: admin.id,
-          ...admin,
-          ...newAdmin,
-          password: bcrypt.hashSync(admin.password, 10),
-          updatedAt: new Date().toISOString(),
-        };
-      }
-      return admin;
-    });
+  const data = fs.readFileSync('./dataBaseJson/default.data.json');
+  const admins = JSON.parse(data);
+  const newAdminData = admins.adminsAndUsersLists.map((admin) => {
+    if (admin.id === id) {
+      return {
+        id: admin.id,
+        ...admin,
+        ...newAdmin,
+        password: bcrypt.hashSync(admin.password, 10),
+        updatedAt: new Date().toISOString(),
+      };
+    }
+    return admin;
+  });
+  if(newAdminData){
     fs.writeFileSync(
       './dataBaseJson/default.data.json',
       JSON.stringify({ adminsAndUsersLists: newAdminData, userDataLists: [...defaultData.userDataLists] })
     );
-    return oldAdmin;
   }
+  return newAdminData;
+}
+
+const getAdminByEmail = async (email) => {
+  const user = defaultData.adminsAndUsersLists.find((user) => user.email === email);
+  return user;
 };
 
 const adminService = {
@@ -76,6 +78,7 @@ const adminService = {
   getAdmin,
   deleteAdmin,
   updateAdmin,
+  getAdminByEmail,
 };
 
 export default adminService;

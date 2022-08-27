@@ -5,7 +5,6 @@ const verifyToken = async (req, res, next) => {
     const user = await authService.getUserFromAuthToken(req.headers?.authorization);
     req.currentUser = user;
 
-    console.log('user', user);
     return next();
   } catch (error) {
     return next(error);

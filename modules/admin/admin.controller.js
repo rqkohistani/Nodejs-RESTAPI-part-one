@@ -47,9 +47,11 @@ const deleteAdmin = (req, res, next) => {
 const updateAdmin = (req, res, next) => {
   try {
     const id = parseInt(req.params.id, 10);
+    const getAdmin = adminService.getAdmin(id);
+    if (!getAdmin) throw new HttpError(404, 'Admin not found.');
     const admin = adminService.updateAdmin(id, req.body);
     if (!admin) throw new HttpError(404, 'Admin not found.');
-    res.status(200).send(admin);
+    res.status(200).json({message: 'Admin updated successfully.', data: adminService.getAdmin(id)});
   } catch (error) {
     next(error);
   }
