@@ -57,6 +57,24 @@
       "userRole": "admin",
       "createdAt": "2022-08-21T06:43:05.218Z",
       "updatedAt": "2022-08-21T06:54:56.336Z"
+    },
+    {
+      "id": 1661614754066,
+      "name": "saturday",
+      "email": "newEmail12@softhouse.se",
+      "password": "$2b$10$itPctk1qohEi.8ORF3NB1upjy1gDEk2we2Kx0bzD9rywezc2RVMQy",
+      "userRole": "user",
+      "createdAt": "2022-08-27T15:39:14.166Z",
+      "updatedAt": "2022-08-27T23:55:00.201Z"
+    },
+    {
+      "id": 1661644497142,
+      "name": "saturday",
+      "email": "saturday@softhouse.se",
+      "password": "$2b$10$ABsCPSJyLoK7pCD3TO7O..RRoiXwhgzGaxMqZez4wI1QxqhbAIK5W",
+      "userRole": "admin",
+      "createdAt": "2022-08-27T23:54:57.201Z",
+      "updatedAt": "2022-08-27T23:54:57.201Z"
     }
   ],
   "userDataLists": [
@@ -112,13 +130,6 @@
       "email": "robin@gmail.com",
       "posts": [
         {
-          "id": 961504,
-          "title": "Facere veritatis culpa at ullam voluptatem tempora ad.",
-          "body": "Aspernatur voluptas occaecati est explicabo aperiam. Illum culpa esse laborum suscipit provident rerum. Nulla assumenda est aut itaque sed eaque vel. Et quidem repellat non illo cum et sit ab blanditiis. Qui distinctio in.",
-          "createdAt": "2022-08-20T18:42:07.002Z",
-          "updatedAt": "2022-08-20T18:42:07.002Z"
-        },
-        {
           "id": 120128,
           "userId": 1660665125000,
           "title": "auto generates",
@@ -128,7 +139,7 @@
         }
       ],
       "createdAt": "2022-08-16T15:15:52.044Z",
-      "updatedAt": "2022-08-21T07:41:55.758Z"
+      "updatedAt": "2022-08-27T23:55:35.032Z"
     },
     {
       "id": 1660663025000,
@@ -157,38 +168,48 @@
       "updatedAt": "2022-08-16T15:16:13.785Z"
     },
     {
-      "id": 1661065520617,
+      "id": 1661642796555,
       "name": "Nodejs api- ",
       "email": "nodejs@gmail.com",
-      "password": "$2b$10$HG9W6pBrkngakPzSBsO7d..Zzq34uJ6arS8bciuyVGTaT7zpKZci6",
+      "password": "$2b$10$E1QhZGzuD1GPYNxuNbUmHu7Gp6QRaX5i/gj24ZVfrwQUC5sjzuSTe",
+      "posts": [],
+      "createdAt": "2022-08-27T23:26:36.679Z",
+      "updatedAt": "2022-08-27T23:26:36.679Z"
+    },
+    {
+      "id": 1661643891909,
+      "name": "Nodejs api- ",
+      "email": "nodejs@gmail.com",
+      "password": "$2b$10$vRh9kYRkUaS2VHwf5o.q5.WjyrqtK9CuEIbGU5JXxXODdfF3g4a6O",
       "posts": [
         {
-          "id": 535382,
-          "userId": 1661065520617,
-          "title": "Post title test",
-          "body": "This is the body",
-          "createdAt": "2022-08-21T07:25:39.054Z",
-          "updatedAt": "2022-08-21T07:25:39.054Z"
-        },
-        {
-          "id": 977399,
-          "userId": 1661065520617,
-          "title": "Post title test  2",
-          "body": "This is the body",
-          "createdAt": "2022-08-21T07:26:42.421Z",
-          "updatedAt": "2022-08-21T07:26:42.421Z"
-        },
-        {
-          "id": 361051,
-          "userId": 1661065520617,
+          "id": 306518,
+          "userId": 1661643891909,
           "title": "new title",
           "body": "new body of the postId",
-          "createdAt": "2022-08-21T07:29:25.383Z",
-          "updatedAt": "2022-08-21T07:44:15.875Z"
+          "createdAt": "2022-08-27T23:45:01.341Z",
+          "updatedAt": "2022-08-27T23:55:31.457Z"
+        },
+        {
+          "id": 352368,
+          "userId": 1661643891909,
+          "title": "Post title test  2",
+          "body": "This is the body",
+          "createdAt": "2022-08-27T23:55:24.184Z",
+          "updatedAt": "2022-08-27T23:55:24.184Z"
         }
       ],
-      "createdAt": "2022-08-21T07:05:20.711Z",
-      "updatedAt": "2022-08-21T07:44:15.875Z"
+      "createdAt": "2022-08-27T23:44:51.969Z",
+      "updatedAt": "2022-08-27T23:55:31.457Z"
+    },
+    {
+      "id": 1661644512134,
+      "name": "Nodejs api- ",
+      "email": "nodejs@gmail.com",
+      "password": "$2b$10$4v5z12.JoTu8iH2XHFJ8nO43r2u/KDLqFZPkoZ3quGSKruDKSbAjC",
+      "posts": [],
+      "createdAt": "2022-08-27T23:55:12.195Z",
+      "updatedAt": "2022-08-27T23:55:12.195Z"
     }
   ]
 }
