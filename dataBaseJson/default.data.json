@@ -139,7 +139,7 @@
         }
       ],
       "createdAt": "2022-08-16T15:15:52.044Z",
-      "updatedAt": "2022-08-27T23:55:35.032Z"
+      "updatedAt": "2022-08-28T00:04:40.759Z"
     },
     {
       "id": 1660663025000,
@@ -183,24 +183,16 @@
       "password": "$2b$10$vRh9kYRkUaS2VHwf5o.q5.WjyrqtK9CuEIbGU5JXxXODdfF3g4a6O",
       "posts": [
         {
-          "id": 306518,
-          "userId": 1661643891909,
-          "title": "new title",
-          "body": "new body of the postId",
-          "createdAt": "2022-08-27T23:45:01.341Z",
-          "updatedAt": "2022-08-27T23:55:31.457Z"
-        },
-        {
-          "id": 352368,
+          "id": 178688,
           "userId": 1661643891909,
           "title": "Post title test  2",
           "body": "This is the body",
-          "createdAt": "2022-08-27T23:55:24.184Z",
-          "updatedAt": "2022-08-27T23:55:24.184Z"
+          "createdAt": "2022-08-28T00:36:57.662Z",
+          "updatedAt": "2022-08-28T00:36:57.662Z"
         }
       ],
       "createdAt": "2022-08-27T23:44:51.969Z",
-      "updatedAt": "2022-08-27T23:55:31.457Z"
+      "updatedAt": "2022-08-28T00:20:38.364Z"
     },
     {
       "id": 1661644512134,
