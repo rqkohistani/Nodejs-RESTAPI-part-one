@@ -29,52 +29,6 @@
       "userRole": "user",
       "createdAt": "2022-08-19T13:12:02.207Z",
       "updatedAt": "2022-08-19T13:12:02.207Z"
-    },
-    {
-      "id": 1660828353000,
-      "name": "user2",
-      "email": "user2@softhouse.se",
-      "password": "$2b$10$rRTsyB92FqSCD56zIj/04udY1V1bbMm3XyjJTrO/AizHd.17Ewy.G",
-      "non-hashed-password": "password",
-      "userRole": "user",
-      "createdAt": "2022-08-19T13:12:33.725Z",
-      "updatedAt": "2022-08-19T13:12:33.725Z"
-    },
-    {
-      "id": 1661064107935,
-      "name": "admin",
-      "email": "admin@softhouse.se",
-      "password": "$2b$10$VLRgndvgcCQsC0R5KUmLsumWpTy6KvgtQgLzkILN04Enr6muxWJg6",
-      "userRole": "admin",
-      "createdAt": "2022-08-21T06:41:48.013Z",
-      "updatedAt": "2022-08-21T06:41:48.013Z"
-    },
-    {
-      "id": 1661064185149,
-      "name": "New admin Name",
-      "email": "newEmail@softhouse.se",
-      "password": "$2b$10$aLmXrvSprN1zGmcVlSNy3u828FkKYfIJVbTb1a4x5ub/Dh.YX.ZLO",
-      "userRole": "admin",
-      "createdAt": "2022-08-21T06:43:05.218Z",
-      "updatedAt": "2022-08-21T06:54:56.336Z"
-    },
-    {
-      "id": 1661614754066,
-      "name": "saturday",
-      "email": "newEmail12@softhouse.se",
-      "password": "$2b$10$itPctk1qohEi.8ORF3NB1upjy1gDEk2we2Kx0bzD9rywezc2RVMQy",
-      "userRole": "user",
-      "createdAt": "2022-08-27T15:39:14.166Z",
-      "updatedAt": "2022-08-27T23:55:00.201Z"
-    },
-    {
-      "id": 1661644497142,
-      "name": "saturday",
-      "email": "saturday@softhouse.se",
-      "password": "$2b$10$ABsCPSJyLoK7pCD3TO7O..RRoiXwhgzGaxMqZez4wI1QxqhbAIK5W",
-      "userRole": "admin",
-      "createdAt": "2022-08-27T23:54:57.201Z",
-      "updatedAt": "2022-08-27T23:54:57.201Z"
     }
   ],
   "userDataLists": [
@@ -92,7 +46,16 @@
       "name": "Rashed",
       "password": "$2b$10$msykO3w1k9hbtfpVBvdrnej1N7Mp4aGsfOtRZ6WlQyAcJ0H9U/56i",
       "email": "rashed@gmail.com",
-      "posts": [],
+      "posts": [
+        {
+          "id": 75819,
+          "userId": 1660663805000,
+          "title": "Post title test  2",
+          "body": "This is the body",
+          "createdAt": "2022-08-28T08:08:03.007Z",
+          "updatedAt": "2022-08-28T08:08:03.007Z"
+        }
+      ],
       "createdAt": "2022-08-16T15:15:30.188Z",
       "updatedAt": "2022-08-16T15:15:30.188Z"
     },
