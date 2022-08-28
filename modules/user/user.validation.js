@@ -1,4 +1,3 @@
-
 import { validateJsonSchema } from '../../utils/validation.util';
 import { createUserSchema, updateUserSchema, deleteUserSchema } from './schemas';
 import { HttpError } from '../../errors';
@@ -21,11 +20,6 @@ const updateUser = (req, res, next) => {
   };
   validateJsonSchema(updateUserSchema, user);
   delete user.id;
-  /**
-   * id is not allowed to be updated and is therefore removed from the score object.
-   * It is only used for validation. The id is taken from the url. This is done to prevent the id from being updated.
-   * or updateUserSchema.properties remove it    "id": { "type": "integer" }, However, this is not recommended.
-   */
   req.body = user;
   next();
 };
@@ -51,8 +45,8 @@ const deleteUser = (req, res, next) => {
  * or delete a user only if the user is inactive for a certain period of time
  * or remove this function
  */
-// TODO: This is fixed now. Only super admin and admin can delete a user. However, Let's keep this function for now.
-const secretProvided = (secret) => { 
+
+const secretProvided = (secret) => {
   if (secret === 'secret') {
     return true;
   } else {
