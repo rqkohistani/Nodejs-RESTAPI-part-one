@@ -16,7 +16,7 @@ const getPostByUserId = async (req, res, next) => {
 const updatePost = async (req, res, next) => {
   try {
     const { userId } = req.body;
-    const postId = parseInt(req.params.postId, 10); // get the post id from the url
+    const postId = parseInt(req.params.postId, 10);
     const postData = req.body;
     const userPost = await userPostService.updatePost(userId, postId, postData);
     if (userPost) {
@@ -31,12 +31,12 @@ const updatePost = async (req, res, next) => {
 const deletePost = async (req, res, next) => {
   try {
     const { userId } = req.body;
-    const postId = parseInt(req.params.postId, 10); // get the post id from the url
+    const postId = parseInt(req.params.postId, 10);
     const userPost = await userPostService.deletePost(userId, postId);
     if (userPost) {
       return res.status(200).json(userPost);
     }
-    return res.status(404).json({ message: 'userPostNotFound' });
+    return res.status(404).json({ message: 'user Post Not Found' });
   } catch (error) {
     return next(new HttpError(error.message, 500));
   }
