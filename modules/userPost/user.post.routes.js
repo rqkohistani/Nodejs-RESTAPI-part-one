@@ -11,11 +11,7 @@ const routes = () => {
   userPostRouter.post('/', securityMiddleware, userPostValidators.createUserPost, createPost);
   userPostRouter.delete('/:postId', securityMiddleware, deletePost);
   userPostRouter.patch('/:postId', securityMiddleware, updatePost);
-  // userPostRouter.get('/:userId', securityMiddleware, userPostValidators.getPostByUserId,getPostByUserId);
-  // userPostRouter.delete('/:postId', securityMiddleware,userPostValidators.deletePost, deletePost);
-  // userPostRouter.patch('/:postId', securityMiddleware, userPostValidators.updateUserPost, updatePost);
-
-  // TODO: Add VALIDATION to the GETPOSTBYUSERID, DELETE and UPDATE routes.
+  // TODO: Add VALIDATION to the GETPOSTBYUSERID, DELETE and UPDATE routes. check out part two github repo for more info.
   return userPostRouter;
 };
 

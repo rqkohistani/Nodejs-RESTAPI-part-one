@@ -1,4 +1,4 @@
-import { loginSchema,logoutSchema } from './schemas';
+import { loginSchema } from './schemas';
 import { validateJsonSchema } from '../../utils/validation.util';
 
 const login = (req, res, next) => {
@@ -10,19 +10,9 @@ const login = (req, res, next) => {
   next();
 };
 
-const logout = (req, res, next) => {
-  const user = {
-    ...req.body,
-  };
-  validateJsonSchema(logoutSchema, user);
-  req.body = user;
-  next();
-};
-
 const authValidators = {
   login,
-  logout,
 };
 
 export default authValidators;
-export { login, logout };
+export { login };

@@ -46,12 +46,13 @@ const deleteUser = (req, res, next) => {
 const updateUser = (req, res, next) => {
   try {
     const id = parseInt(req.params.id, 10);
+    const getUserByEmail = userService.getUser(id);
+    if (!getUserByEmail) throw new HttpError(404, 'User not found.');
     const user = userService.updateUser(id, req.body);
     if (!user) throw new HttpError(404, 'User not found.');
-    res.status(200).send(user);
+    res.status(200).json({ message: 'Admin updated successfully.', data: userService.getUser(id) });
   } catch (error) {
-        next(error);
-
+    next(error);
   }
 };
 

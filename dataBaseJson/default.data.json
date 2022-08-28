@@ -29,34 +29,6 @@
       "userRole": "user",
       "createdAt": "2022-08-19T13:12:02.207Z",
       "updatedAt": "2022-08-19T13:12:02.207Z"
-    },
-    {
-      "id": 1660828353000,
-      "name": "user2",
-      "email": "user2@softhouse.se",
-      "password": "$2b$10$rRTsyB92FqSCD56zIj/04udY1V1bbMm3XyjJTrO/AizHd.17Ewy.G",
-      "non-hashed-password": "password",
-      "userRole": "user",
-      "createdAt": "2022-08-19T13:12:33.725Z",
-      "updatedAt": "2022-08-19T13:12:33.725Z"
-    },
-    {
-      "id": 1661064107935,
-      "name": "admin",
-      "email": "admin@softhouse.se",
-      "password": "$2b$10$VLRgndvgcCQsC0R5KUmLsumWpTy6KvgtQgLzkILN04Enr6muxWJg6",
-      "userRole": "admin",
-      "createdAt": "2022-08-21T06:41:48.013Z",
-      "updatedAt": "2022-08-21T06:41:48.013Z"
-    },
-    {
-      "id": 1661064185149,
-      "name": "New admin Name",
-      "email": "newEmail@softhouse.se",
-      "password": "$2b$10$aLmXrvSprN1zGmcVlSNy3u828FkKYfIJVbTb1a4x5ub/Dh.YX.ZLO",
-      "userRole": "admin",
-      "createdAt": "2022-08-21T06:43:05.218Z",
-      "updatedAt": "2022-08-21T06:54:56.336Z"
     }
   ],
   "userDataLists": [
@@ -74,7 +46,16 @@
       "name": "Rashed",
       "password": "$2b$10$msykO3w1k9hbtfpVBvdrnej1N7Mp4aGsfOtRZ6WlQyAcJ0H9U/56i",
       "email": "rashed@gmail.com",
-      "posts": [],
+      "posts": [
+        {
+          "id": 75819,
+          "userId": 1660663805000,
+          "title": "Post title test  2",
+          "body": "This is the body",
+          "createdAt": "2022-08-28T08:08:03.007Z",
+          "updatedAt": "2022-08-28T08:08:03.007Z"
+        }
+      ],
       "createdAt": "2022-08-16T15:15:30.188Z",
       "updatedAt": "2022-08-16T15:15:30.188Z"
     },
@@ -112,13 +93,6 @@
       "email": "robin@gmail.com",
       "posts": [
         {
-          "id": 961504,
-          "title": "Facere veritatis culpa at ullam voluptatem tempora ad.",
-          "body": "Aspernatur voluptas occaecati est explicabo aperiam. Illum culpa esse laborum suscipit provident rerum. Nulla assumenda est aut itaque sed eaque vel. Et quidem repellat non illo cum et sit ab blanditiis. Qui distinctio in.",
-          "createdAt": "2022-08-20T18:42:07.002Z",
-          "updatedAt": "2022-08-20T18:42:07.002Z"
-        },
-        {
           "id": 120128,
           "userId": 1660665125000,
           "title": "auto generates",
@@ -128,7 +102,7 @@
         }
       ],
       "createdAt": "2022-08-16T15:15:52.044Z",
-      "updatedAt": "2022-08-21T07:41:55.758Z"
+      "updatedAt": "2022-08-28T00:04:40.759Z"
     },
     {
       "id": 1660663025000,
@@ -157,38 +131,40 @@
       "updatedAt": "2022-08-16T15:16:13.785Z"
     },
     {
-      "id": 1661065520617,
+      "id": 1661642796555,
       "name": "Nodejs api- ",
       "email": "nodejs@gmail.com",
-      "password": "$2b$10$HG9W6pBrkngakPzSBsO7d..Zzq34uJ6arS8bciuyVGTaT7zpKZci6",
+      "password": "$2b$10$E1QhZGzuD1GPYNxuNbUmHu7Gp6QRaX5i/gj24ZVfrwQUC5sjzuSTe",
+      "posts": [],
+      "createdAt": "2022-08-27T23:26:36.679Z",
+      "updatedAt": "2022-08-27T23:26:36.679Z"
+    },
+    {
+      "id": 1661643891909,
+      "name": "Nodejs api- ",
+      "email": "nodejs@gmail.com",
+      "password": "$2b$10$vRh9kYRkUaS2VHwf5o.q5.WjyrqtK9CuEIbGU5JXxXODdfF3g4a6O",
       "posts": [
         {
-          "id": 535382,
-          "userId": 1661065520617,
-          "title": "Post title test",
-          "body": "This is the body",
-          "createdAt": "2022-08-21T07:25:39.054Z",
-          "updatedAt": "2022-08-21T07:25:39.054Z"
-        },
-        {
-          "id": 977399,
-          "userId": 1661065520617,
+          "id": 178688,
+          "userId": 1661643891909,
           "title": "Post title test  2",
           "body": "This is the body",
-          "createdAt": "2022-08-21T07:26:42.421Z",
-          "updatedAt": "2022-08-21T07:26:42.421Z"
-        },
-        {
-          "id": 361051,
-          "userId": 1661065520617,
-          "title": "new title",
-          "body": "new body of the postId",
-          "createdAt": "2022-08-21T07:29:25.383Z",
-          "updatedAt": "2022-08-21T07:44:15.875Z"
+          "createdAt": "2022-08-28T00:36:57.662Z",
+          "updatedAt": "2022-08-28T00:36:57.662Z"
         }
       ],
-      "createdAt": "2022-08-21T07:05:20.711Z",
-      "updatedAt": "2022-08-21T07:44:15.875Z"
+      "createdAt": "2022-08-27T23:44:51.969Z",
+      "updatedAt": "2022-08-28T00:20:38.364Z"
+    },
+    {
+      "id": 1661644512134,
+      "name": "Nodejs api- ",
+      "email": "nodejs@gmail.com",
+      "password": "$2b$10$4v5z12.JoTu8iH2XHFJ8nO43r2u/KDLqFZPkoZ3quGSKruDKSbAjC",
+      "posts": [],
+      "createdAt": "2022-08-27T23:55:12.195Z",
+      "updatedAt": "2022-08-27T23:55:12.195Z"
     }
   ]
 }

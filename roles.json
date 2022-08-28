@@ -1,8 +1,18 @@
 {
   "user": {
-    "routes": ["GET/api/v1/users/", "GET/api/v1/users/{id}"]
+    "routes": [
+      "GET/api/v1/users/",
+      "GET/api/v1/users/:id",
+      "POST/api/v1/users/",
+      "PATCH/api/v1/users/:id",
+      "DELETE/api/v1/users/:id",
+      "POST/api/v1/posts/",
+      "GET/api/v1/posts/:userId",
+      "PATCH/api/v1/posts/:postId",
+      "DELETE/api/v1/posts/:postId"
+    ]
   },
-  "admin": {
+  "newUserRole": {
     "routes": [
       "GET/api/v1/users",
       "GET/api/v1/users/{id}",
@@ -17,7 +27,7 @@
       "DELETE/api/v1/admins/{id}"
     ]
   },
-  "superAdmin": {
+  "superNewUserRole": {
     "routes": [
       "GET/api/v1/users",
       "GET/api/v1/users/{id}",

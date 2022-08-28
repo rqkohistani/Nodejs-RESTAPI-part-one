@@ -43,33 +43,6 @@
 					"response": []
 				},
 				{
-					"name": "logout",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"password1\": \"password\",\r\n    \"email\": \"jonas@gmail.com\"\r\n    \r\n    \r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseUrl}}/auth/logout",
-							"host": [
-								"{{BaseUrl}}"
-							],
-							"path": [
-								"auth",
-								"logout"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "me",
 					"request": {
 						"method": "GET",
@@ -88,6 +61,144 @@
 							"path": [
 								"auth",
 								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "getAllAdmins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admins",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdmins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admins/:id",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1661064185149"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin\",\r\n    \"email\":\"admin@softhouse.se\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/admins",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"New admin Name\",\r\n    \"email\":\"newEmail@softhouse.se\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/admins/:id",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1661064185149"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"secret\": \"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/admins/:id",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admins",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1660827888000"
+								}
 							]
 						}
 					},
@@ -237,144 +348,6 @@
 								{
 									"key": "id",
 									"value": "1661065520617"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "admin",
-			"item": [
-				{
-					"name": "admin post",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"admin\",\r\n    \"email\":\"admin@softhouse.se\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"admin\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseUrl}}/admins",
-							"host": [
-								"{{BaseUrl}}"
-							],
-							"path": [
-								"admins"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "admin update",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"New admin Name\",\r\n    \"email\":\"newEmail@softhouse.se\",\r\n    \"password\": \"password\",\r\n    \"userRole\": \"admin\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseUrl}}/admins/:id",
-							"host": [
-								"{{BaseUrl}}"
-							],
-							"path": [
-								"admins",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "1661064185149"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "admin delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"secret\": \"secret\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseUrl}}/admins/:id",
-							"host": [
-								"{{BaseUrl}}"
-							],
-							"path": [
-								"admins",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "1660827888000"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAllAdmins",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseUrl}}/admins",
-							"host": [
-								"{{BaseUrl}}"
-							],
-							"path": [
-								"admins"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAdmins",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseUrl}}/admins/:id",
-							"host": [
-								"{{BaseUrl}}"
-							],
-							"path": [
-								"admins",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "1661064185149"
 								}
 							]
 						}

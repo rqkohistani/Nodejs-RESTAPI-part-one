@@ -9,67 +9,40 @@ const getPostByUserId = async (userId) => {
   return [];
 };
 
-const deletePost = async (userId, postId) => { 
+const deletePost = async (userId, postId) => {
   const user = defaultData.userDataLists.find((user) => user.id === userId);
   if (user) {
     const data = fs.readFileSync('./dataBaseJson/default.data.json');
-    const users = JSON.parse(data);
-    const newUserData = users.userDataLists.map((user) => {
-      if (user.id === userId) {
-        const newPosts = user.posts.filter((post) => post.id !== postId);
-        return {
-          id: user.id,
-          ...user,
-          posts: newPosts,
-          updatedAt: new Date().toISOString(),
-        };
-      }
-      return user;
-    });
-    fs.writeFileSync(
-      './dataBaseJson/default.data.json',
-      JSON.stringify({ adminsAndUsersLists: [...defaultData.adminsAndUsersLists], userDataLists: newUserData })
-    );
-    return user;
+    const dataJson = JSON.parse(data);
+    const post = dataJson.userDataLists.find((user) => user.id === userId).posts.find((post) => post.id === postId);
+    if (post) {
+      dataJson.userDataLists.find((user) => user.id === userId).posts = dataJson.userDataLists
+        .find((user) => user.id === userId)
+        .posts.filter((post) => post.id !== postId);
+      fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify(dataJson));
+      return post;
+    }
+    return null;
   }
-  return user;
+  return null;
 };
 
 const updatePost = async (userId, postId, postData) => {
   const user = defaultData.userDataLists.find((user) => user.id === userId);
   if (user) {
     const data = fs.readFileSync('./dataBaseJson/default.data.json');
-    const users = JSON.parse(data);
-    const newUserData = users.userDataLists.map((user) => {
-      if (user.id === userId) { 
-        const newPosts = user.posts.map((post) => {
-          if (post.id === postId) {
-            return {
-              id: post.id,
-              ...post,
-              ...postData,
-              updatedAt: new Date().toISOString(),
-            };
-          }
-          return post;
-        });
-        return {
-          id: user.id,
-          ...user,
-          posts: newPosts,
-          updatedAt: new Date().toISOString(),
-        };
-
-      }
-      return user;
-    });
-    fs.writeFileSync(
-      './dataBaseJson/default.data.json',
-      JSON.stringify({ adminsAndUsersLists: [...defaultData.adminsAndUsersLists], userDataLists: newUserData })
-    );
-    return user;
+    const json = JSON.parse(data);
+    const post = json.userDataLists.find((user) => user.id === userId).posts.find((post) => post.id === postId);
+    if (post) {
+      post.title = postData.title;
+      post.body = postData.body;
+      post.updatedAt = new Date().toISOString();
+      fs.writeFileSync('./dataBaseJson/default.data.json', JSON.stringify(json));
+      return post;
+    }
+    return null;
   }
-  return user;
+  return null;
 };
 
 const createPost = async (userId, postData) => {
@@ -98,7 +71,7 @@ const createPost = async (userId, postData) => {
     );
     return newUserData.find((user) => user.id === userId);
   }
-  return user; // return null if user not found
+  return user;
 };
 
 const userPostService = {

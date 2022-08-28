@@ -1,6 +1,10 @@
-# Build a Secure Nodejs REST API part one
+# A-Secure-Node-js-REST-API-with-Json file storage
 
-## This Nodejs REST API part one USES best APIs practices  and is designed to be secure and easy to use
+***
+![Save the token](./images/nodejs.PNG)
+***
+
+## This Nodejs REST API part two is intended to be secure and user-friendly, and it makes use of best API practices
 
 ***
 
@@ -10,15 +14,27 @@ The APIs could be improve over time to be more secure.
 
 ***
 
+## Steps to run Node JS REST API part two
+
+***
+
 ## How to export the APIs to Postman
 
 1. Download the Nodejs REST API partOne V1 .postman_collection.json file on the current repo
 2. Open Postman
-3. Click on the import button
+3. Select the import icon.
 4. Upload the Nodejs REST API partOne V1 .postman_collection.json file
-5. LOG IN to the APIs
+5. Go to auth/login and enter the username and password
 
-## Login
+***
+
+## Clone the repo
+
+1. npm install
+2. npm start
+3. [Open the browser](http://localhost:3000)
+
+## 3 Login
 
 ### Login with username and password
 
@@ -30,13 +46,13 @@ The APIs could be improve over time to be more secure.
     - Go to Variables
     - Paste in the token
     - tokenPartOneV1
-    - Make sure one of tokenPartOneV1 is selected. 
+    - Make sure one of tokenPartOneV1 is selected.
       - Multiple of tokenPartOneV1 can be used but one must be selected at the time.
     - Note: at the same multiple user could been logged in.
     - click on the Save button
     - ![Save the token](./GithubImages/loginToken.PNG)
 
-3. The  ***Get ...auth/me** route to see if you are logged in
+3. The  ***Get ...auth/me** route will return the user who is logged in.
     - Click on the me route
     - Click on the Send button
     - if successful you should see the following
@@ -44,6 +60,34 @@ The APIs could be improve over time to be more secure.
     - ![me route](./GithubImages/meRoute.PNG)
 
 ***
+
+- superadmin
+
+          {
+          "email": "softhouse@gmail.com",
+          "password": "password"    
+           } 
+
+***  
+
+- admin
+
+          {
+          "email": "admin@gmail.com",
+          "password": "password"    
+           } 
+
+***
+
+- user
+
+          {
+          "user1": "admin@gmail.com",
+          "password": "password"    
+           } 
+
+***
+
 ### Create an admin or user
 
 1. Click on the admin/admin post route
@@ -69,7 +113,6 @@ The APIs could be improve over time to be more secure.
 
 8. ![Admin updated](./GithubImages/getAdminByAdminId.PNG)
 
-
 ### Other admin or user routes are the same. you can check them out. You got the idea
 
 The rest would be the same. You got the idea.
@@ -78,7 +121,7 @@ The rest would be the same. You got the idea.
 
 ## Create a new user
 
-### OBS: the user is not an admin or user. It could be renamed to customer or client. It is up to you. However, lets keep it this way for now
+### OBS: the user is not an admin or user. It could be renamed to customer or client. lets keep it this way for now
 
 1. Click on the user/user route
 2. Fill new user credentials in the Body
@@ -87,7 +130,7 @@ The rest would be the same. You got the idea.
 5. ![Create a new user](./GithubImages/newUser.PNG)
 6. ![User created](./GithubImages/newUserCreated.PNG)
 7. Go to getAllUsers route
-    - you should see the new user
+    - The newly created user should be in the list
 
 ***
 
@@ -108,8 +151,8 @@ The rest would be the same. You got the idea.
 
 ## Delete a user
 
-Delete a user is the same as delete an admin. However, at the time of coding the delete user function the word "secret" field in the body must be have been presented. This is to prevent an admin from deleting another user. Without the secret word "secret" the admin cannot delete the user.
-It can be handle in roles and permissions. However, for now it is like this.
+Delete a user without the secret word "secret" is not allowed. However, permission can be added or remvoed to roles.json file to prevent deletion of a user.
+Lets keep it this way for now.
 
 1. Click on the user/user delete route
 2. Params
@@ -163,6 +206,8 @@ It can be handle in roles and permissions. However, for now it is like this.
 
 ***
 
-### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT. PLEASE FEEL FREE TO CONTACT ME IF YOU HAVE ANY QUESTIONS OR SUGGESTIONS. THANK YOU
+### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT
 
-[linkedIn](https://www.linkedin.com/in/rashed-qazizada-1b64b68a/)
+Perharps there are some bugs in the code. Please feel free to contact me.
+
+## [linkedIn](https://www.linkedin.com/in/rashed-qazizada-1b64b68a/)
