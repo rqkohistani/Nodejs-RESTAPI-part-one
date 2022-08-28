@@ -12,7 +12,7 @@ The APIs could be improve over time to be more secure.
 
 ## Check out [Build-a-Secure-Nodejs-REST-API-part-two github repo](https://github.com/rqkohistani/Build-a-Secure-Node-js-REST-API-part-two-with-mysql)
 
-## Chekc out [Nodejs-REST-API-part-two uses **PRISMA** and Azure Data Studio for storage](https://github.com/rqkohistani/a-secure-nodejs-REST-APIs-USING-PRISMA)
+## Chekc out [Nodejs-REST-API-part-three uses **PRISMA** and Azure Data Studio for storage](https://github.com/rqkohistani/a-secure-nodejs-REST-APIs-USING-PRISMA)
 
 ***
 
