@@ -40,48 +40,45 @@ const deleteUser = (id) => {
     const data = fs.readFileSync('./dataBaseJson/default.data.json');
     const users = JSON.parse(data);
     const newUserData = users.userDataLists.filter((user) => user.id !== id);
-    fs.writeFileSync(
-      './dataBaseJson/default.data.json',
-      JSON.stringify({ adminsAndUsersLists: [...defaultData.adminsAndUsersLists], userDataLists: newUserData })
-    );
+    if (newUserData) {
+      fs.writeFileSync(
+        './dataBaseJson/default.data.json',
+        JSON.stringify({ adminsAndUsersLists: [...defaultData.adminsAndUsersLists], userDataLists: newUserData })
+      );
+    }
+    return user;
   }
-  return user;
 };
 
-// FIXME: It does update the user but it does not return to the user the updated user in postman body response.
-// FIXME: if user is not found, it returns {}- in postman body response.
 const updateUser = async (id, newUser) => {
-  const oldUser = defaultData.userDataLists.find((user) => user.id === id);
-  if (oldUser) {
-    const data = fs.readFileSync('./dataBaseJson/default.data.json');
-    const users = JSON.parse(data);
-    const newUserData = users.userDataLists.map((user) => {
-      if (user.id === id) {
-        return {
-          id: user.id,
-          ...user,
-          ...newUser,
-          password: bcrypt.hashSync(user.password, 10),
-          updatedAt: new Date().toISOString(),
-        };
-      }
-      return user;
-    });
+  const data = fs.readFileSync('./dataBaseJson/default.data.json');
+  const users = JSON.parse(data);
+  const newUserData = users.userDataLists.map((user) => {
+    if (user.id === id) {
+      return {
+        id: user.id,
+        ...user,
+        ...newUser,
+        password: bcrypt.hashSync(user.password, 10),
+        updatedAt: new Date().toISOString(),
+      };
+    }
+    return user;
+  });
+  if (newUserData) {
     fs.writeFileSync(
       './dataBaseJson/default.data.json',
       JSON.stringify({ adminsAndUsersLists: [...defaultData.adminsAndUsersLists], userDataLists: newUserData })
     );
-    return oldUser;
   }
-  return oldUser; // return null if user not found
+  return newUserData;
 };
 
 const checkEmail = (email) => {
   const user = defaultData.adminsAndUsersLists.find((user) => user.email === email);
   return user;
 };
-
-export const getUserByEmail = (email) => {
+const getUserByEmail = (email) => {
   if (checkEmail(email)) {
     return defaultData.adminsAndUsersLists.find((user) => user.email === email);
   }
@@ -95,6 +92,7 @@ const userService = {
   deleteUser,
   updateUser,
   getAdminUser,
+  getUserByEmail,
 };
 
 export default userService;
