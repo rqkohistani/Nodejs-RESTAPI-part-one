@@ -1,8 +1,5 @@
 # A-Secure-Node-js-REST-API-with-Json file storage
 
-***
-![Save the token](./GithubImages/nodejs.PNG)
-***
 
 ## This Nodejs REST API part two is intended to be secure and user-friendly, and it makes use of best API practices
 
