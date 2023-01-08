@@ -207,6 +207,5 @@ Lets keep it this way for now.
 
 ### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT
 
-Perharps there are some bugs in the code. Please feel free to contact me.
 
 ## [linkedIn](https://www.linkedin.com/in/rashed-qazizada-1b64b68a/)
